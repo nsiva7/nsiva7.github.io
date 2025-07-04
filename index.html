@@ -1,376 +1,1098 @@
 <!DOCTYPE html>
-<html>
-<title>Siva Nimmala - Android Developer</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" href="res/siva_fav.ico" type="image/x-icon">
-<style>
-    html, body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Roboto", sans-serif
-    }
-</style>
-<body class="w3-light-grey">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva Nimmala - Senior Android Developer</title>
+    <link rel="shortcut icon" href="res/siva_fav.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- The Grid -->
-    <div class="w3-row-padding">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
 
-        <!-- Left Column -->
-        <div class="w3-third">
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-            <div class="w3-white w3-text-grey w3-card-4">
-                <div class="w3-display-container">
-                    <img src="res/Siva%20Nimmala%20%20(34).jpg" style="width:100%" alt="Avatar">
-                    <h2 class="w3-teal">
-                        <span class="w3-margin-left">Siva</span>
-                        <span class="w3-margin-left w3-opacity">Nimmala</span>
-                    </h2>
-                </div>
-                <div class="w3-container">
-                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Android Developer</p>
-                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Bangalore, India</p>
-                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>sivanimmala.dev@gmail.com
-                    </p>
-                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+91 9666976229</p>
-                    <p><i class="fa fa-photo fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="gallery.html">Gallery</a>
-                    </p>
-                    <hr>
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-                    <p class="w3-large"><b><i class="fa fa-cogs fa-fw w3-margin-right w3-text-teal"></i>Skills</b>
-                    </p>
-                    <p>Android Development</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-                    </div>
-                    <p>Jetpack Compose</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">
-                            <div class="w3-center w3-text-white">90%</div>
-                        </div>
-                    </div>
-                    <p>Kotlin</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">
-                            <div class="w3-center w3-text-white">90%</div>
-                        </div>
-                    </div>
-                    <p>Java</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">
-                            <div class="w3-center w3-text-white">90%</div>
-                        </div>
-                    </div>
-                    <p>Graphic Design and UI/UX</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">
-                            <div class="w3-center w3-text-white">90%</div>
-                        </div>
-                    </div>
-                    <p>Flutter</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">
-                            <div class="w3-center w3-text-white">70%</div>
-                        </div>
-                    </div>
-                    <p>Servlets</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-                            <div class="w3-center w3-text-white">80%</div>
-                        </div>
-                    </div>
-                    <p>SQL</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-                            <div class="w3-center w3-text-white">80%</div>
-                        </div>
-                    </div>
-                    <p>REST Web Services</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-                            <div class="w3-center w3-text-white">80%</div>
-                        </div>
-                    </div>
-                    <p>Reverse Engineering</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-                            <div class="w3-center w3-text-white">80%</div>
-                        </div>
-                    </div>
-                    <p>Linux Administration</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">
-                            <div class="w3-center w3-text-white">70%</div>
-                        </div>
-                    </div>
-                    <p>Web Development</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">
-                            <div class="w3-center w3-text-white">60%</div>
-                        </div>
-                    </div>
-                    <br><br>
-                </div>
-            </div>
-            <br>
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
 
-            <!-- End Left Column -->
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, var(--bg-white) 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeIn 1s ease;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--bg-white);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #e5e7eb;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+            animation: fadeInLeft 0.8s ease;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--bg-white);
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+
+        .timeline-content {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .company-name {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .job-period {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .promotion-badge {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #059669 100%);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        .job-description {
+            list-style: none;
+        }
+
+        .job-description li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .job-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--bg-light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg-white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item i.fab.fa-whatsapp {
+            color: #25d366;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .contact-item a:hover i {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .contact-item a.whatsapp-link:hover {
+            color: #25d366;
+        }
+
+        .contact-item a.whatsapp-link:hover i {
+            color: #25d366;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline-item::before {
+                left: -1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">Siva Nimmala</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
+    </div>
+</nav>
 
-        <!-- Right Column -->
-        <div class="w3-twothird">
-
-            <div class="w3-container w3-card w3-margin-bottom" style="background: white">
-                <h2 class="w3-text-grey w3-padding-16"><i
-                        class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-                <div class="w3-container">
-
-                    <h5 class="w3-opacity"><b>Senior Software Engineer</b></h5>
-                    <h6 class="w3-opacity">
-                        <span class="fa fa-briefcase w3-margin-right w3-text-teal"></span>
-                        <span>Collabera Digital</span>
-                    </h6>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Fed 2023 -
-                        <span class="w3-tag w3-teal w3-round">Present</span>
-                    </h6>
-                    <ul class="w3-opacity">
-                        <li>Developing Retail Android Application with Jetpack Compose.</li>
-                        <li>Implementing Rest APIs and UI with Compose.</li>
-                        <li>Collaborating with team and addressing app improvements.</li>
-                    </ul>
-
-                    <h5 class="w3-opacity"><b>Senior Engineer</b></h5>
-                    <h6 class="w3-opacity">
-                        <span class="fa fa-briefcase w3-margin-right w3-text-teal"></span>
-                        <span>Resideo Technologies Inc</span>
-                    </h6>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>April 2021 - Jan 2023
-                    </h6>
-                    <ul class="w3-opacity">
-                        <li>Developing Home Automation Applications for Android Platform.</li>
-                        <li>Implementing Rest & SOAP APIs for Android Applications.</li>
-                        <li>Collaborating with team and implementing the solutions.</li>
-                        <li>Maintaining projects in Git.</li>
-                    </ul>
-                    <h5 class="w3-opacity"><b>SDE I</b></h5>
-                    <h6 class="w3-opacity">
-                        <span class="fa fa-briefcase w3-margin-right w3-text-teal"></span>
-                        <span>Novopay Pvt Ltd</span>
-                    </h6>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sep 2020 - Mar 2021
-                    </h6>
-                    <ul class="w3-opacity">
-                        <li>Developing Banking Applications for Android Platform.</li>
-                        <li>Implementing Rest API for Android Applications.</li>
-                        <li>Collaborating with team and implementing the solutions.</li>
-                        <li>Maintaining projects in Git.</li>
-                    </ul>
-                    <h5 class="w3-opacity"><b>Android Developer</b></h5>
-                    <h6 class="w3-opacity">
-                        <span class="fa fa-briefcase w3-margin-right w3-text-teal"></span>
-                        <span>Modefin Pvt Ltd</span>
-                    </h6>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2018 - Aug 2020
-                    </h6>
-                    <ul class="w3-opacity">
-                        <li>Developing Banking Applications for Android Platform.</li>
-                        <li>Research and Development of new features in Android.</li>
-                        <li>Implementing Rest API in Android Applications.</li>
-                        <li>Collaborating with team and implementing the solutions.</li>
-                        <li>Maintaining projects in Git.</li>
-                    </ul>
-                    <hr>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Siva Nimmala</h1>
+            <p class="subtitle">Senior Android Developer</p>
+            <p>Crafting exceptional mobile experiences with 7+ years of expertise in Android development.
+                Specialized in Jetpack Compose, Kotlin, and modern architecture patterns. Proficient in cutting-edge
+                technologies including KMM (Kotlin Multiplatform Mobile), Ktor, and Kobweb for full-stack Kotlin development.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="https://github.com/nsiva7" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> View GitHub
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>On-Site / Client Location</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2019 - Jan 2020
-                    </h6>
-                    <ul class="w3-opacity">
-                        <li>Interacting with client, discussing ideas and enhancing project features.</li>
-                    </ul>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Apps Published</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Total Downloads</div>
                 </div>
             </div>
-
-            <div class="w3-container w3-text-grey w3-card 3-margin-bottom" style="background: white">
-                <h2 class="w3-text-grey w3-padding-16 ">
-                    <span class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal "></span>Education</h2>
-                <div class="w3-container ">
-                    <h6 class="w3-text-grey ">
-                        <span class="fa fa-calendar fa-fw w3-margin-right w3-text-teal "></span>2013 - 2017</h6>
-                    <span class="fa fa-graduation-cap w3-margin-right w3-text-teal "></span>
-                    <b>Graduation</b>
-                    <ul class="w3-text-grey ">
-                        <li>Computer Science and Engineering</li>
-                    </ul>
-                </div>
-                <br>
-                <div class="w3-container ">
-                    <h6 class="w3-text-grey ">
-                        <span class="fa fa-calendar fa-fw w3-margin-right w3-text-teal "></span>2010 - 2012</h6>
-                    <span class="fa fa-graduation-cap w3-margin-right w3-text-teal "></span>
-                    <b>Intermediate</b>
-                    <ul class="w3-text-grey ">
-                        <li>Mathematics, Physics and Chemistry</li>
-                    </ul>
-                </div>
-                <br>
-                <div class="w3-container ">
-                    <h6 class="w3-text-grey ">
-                        <span class="fa fa-calendar fa-fw w3-margin-right w3-text-teal "></span>2010</h6>
-                    <span class="fa fa-graduation-cap w3-margin-right w3-text-teal "></span>
-                    <b>Secondary School Certificate</b>
-                </div>
-                <br>
-            </div>
-
-            <br/>
-
-            <div class="w3-container w3-text-grey w3-card 3-margin-bottom" style="background: white">
-                <h2 class="w3-text-grey w3-padding-16">
-                    <i class="fa fa-play-circle-o fa-fw w3-margin-right w2-xxlarge w3-text-teal"></i>Own Projects
-                </h2>
-                <div class="w3-container">
-                    <h5 class="w3-text-grey"><b>Music 7 Pro ( 100k Installs )</b></h5>
-                    <h6 class="w3-text-grey">
-                        <span class="fa fa-external-link w3-margin-right w3-text-teal"></span>
-                        <span><a style="display: inline-block;text-decoration: none"
-                                 href="https://play.google.com/store/apps/details?id=siva.app.music7pro"
-                                 target="_blank">https://play.google.com/store/apps/details?id=siva.app.music7pro</a></span>
-                    </h6>
-                    <ul class="w3-text-grey">
-                        <li>Dynamic Music Player for Android</li>
-                        <li>Multiple UI Designs</li>
-                    </ul>
-                    <hr>
-                    <h5 class="w3-text-grey"><b>Music 7</b></h5>
-                    <h6 class="w3-text-grey">
-                        <span class="fa fa-external-link w3-margin-right w3-text-teal"></span>
-                        <span><a style="display: inline-block;text-decoration: none"
-                                 href="https://play.google.com/store/apps/details?id=siva.app.musicplayer7free"
-                                 target="_blank">https://play.google.com/store/apps/details?id=siva.app.musicplayer7free</a></span>
-                    </h6>
-                    <ul class="w3-text-grey">
-                        <li>Automatic player background</li>
-                        <li>Beautiful user interface</li>
-                    </ul>
-                    <hr>
-                    <h5 class="w3-text-grey"><b>Image Studio</b></h5>
-                    <h6 class="w3-text-grey">
-                        <span class="fa fa-external-link w3-margin-right w3-text-teal"></span>
-                        <span><a style="display: inline-block;text-decoration: none"
-                                 href="https://play.google.com/store/apps/details?id=siva.ultimatrix.imagestudio"
-                                 target="_blank">https://play.google.com/store/apps/details?id=siva.ultimatrix.imagestudio</a></span>
-                    </h6>
-                    <ul class="w3-text-grey">
-                        <li>Create images with easy options</li>
-                        <li>Add frames, clip-arts and texts to images</li>
-                    </ul>
-                    <hr>
-                    <h5 class="w3-text-grey"><b>Movies Info</b></h5>
-                    <h6 class="w3-text-grey">
-                        <span class="fa fa-external-link w3-margin-right w3-text-teal"></span>
-                        <span><a style="display: inline-block;text-decoration: none"
-                                 href="https://play.google.com/store/apps/details?id=siva.app.moviesinfo"
-                                 target="_blank">https://play.google.com/store/apps/details?id=siva.app.moviesinfo</a></span>
-                    </h6>
-                    <ul class="w3-text-grey">
-                        <li>Find out any movie information easily.</li>
-                        <li>Get all information information by searching movie title or IMDb ID.</li>
-                    </ul>
-                    <br>
-                </div>
-            </div>
-
-            <br/>
-
-            <div class="w3-container w3-text-grey w3-card 3-margin-bottom" style="background: white">
-                <h2 class="w3-text-grey w3-padding-16">
-                    <i class="fa fa-github fa-fw w3-margin-right w2-xxlarge w3-text-teal"></i>Open Source Projects
-                </h2>
-                <div class="w3-container">
-                    <h5 class="w3-text-grey"><b>Quote Maker</b></h5>
-                    <h6 class="w3-text-grey">
-                        <span class="fa fa-github-alt w3-margin-right w3-text-teal"></span>
-                        <span><a style="display: inline-block;text-decoration: none"
-                                 href="https://github.com/nsiva7/Quote-Maker" target="_blank">https://github.com/nsiva7/Quote-Maker</a></span>
-                        <br/>
-                        <span class="fa fa-external-link w3-margin-right w3-text-teal"></span>
-                        <span><a style="display: inline-block;text-decoration: none"
-                                 href="https://play.google.com/store/apps/details?id=siva.app.quotemaker"
-                                 target="_blank">https://play.google.com/store/apps/details?id=siva.app.quotemaker</a></span>
-                    </h6>
-                    <ul class="w3-text-grey">
-                        <li>Create Quotes Uniquely</li>
-                        <li>Create Quotations easily with emoji's, texts and stickers</li>
-                        <li>Draw Quotes with brush</li>
-                        <li>Apply filters to images</li>
-                    </ul>
-                    <br>
-                </div>
-            </div>
-
-            <br/>
-
-            <div class="w3-container w3-text-grey w3-card 3-margin-bottom" style="background: white">
-                <h2 class="w3-text-grey w3-padding-16">
-                    <i class="fa fa-github fa-fw w3-margin-right w2-xxlarge w3-text-teal"></i>Libraries
-                </h2>
-                <div class="w3-container">
-                    <h5 class="w3-text-grey"><b>JSON_Siva</b></h5>
-                    <h6 class="w3-text-grey">
-                        <span class="fa fa-github-alt w3-margin-right w3-text-teal"></span>
-                        <span><a style="display: inline-block;text-decoration: none"
-                                 href="https://github.com/nsiva7/JSON_Siva" target="_blank">https://github.com/nsiva7/JSON_Siva</a></span>
-                    </h6>
-                    <ul class="w3-text-grey">
-                        <li>Library to parse JSON data with exception handling and enhanced get operations for JSON
-                            Object, JSON Array and other data types.
-                        </li>
-                    </ul>
-                    <br>
-                </div>
-            </div>
-
-            <!-- End Right Column -->
         </div>
-
-        <!-- End Grid -->
+        <div class="hero-image">
+            <img src="res/Siva%20Nimmala%20%20(34).jpg" alt="Siva Nimmala">
+        </div>
     </div>
+</section>
 
-    <!-- End Page Container -->
-</div>
+<!-- Experience Section -->
+<section class="experience" id="experience">
+    <div class="section-container">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <!-- Lowes -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="job-title">Senior Software Engineer</h3>
+                            <p class="company-name">Lowe's India</p>
+                            <div class="promotion-badge">✨ Promoted from Contract to Full-Time Employee</div>
+                        </div>
+                        <span class="job-period">Jan 2023 - May 2025</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Spearheaded Android development for Lowe's mobile commerce platform serving millions of users</li>
+                        <li>Led migration to Jetpack Compose, reducing UI development time by 40%</li>
+                        <li>Optimized app performance resulting in 25% faster load times</li>
+                        <li>Reduced app crashes by 60% through robust error handling</li>
+                        <li>Mentored 5+ junior developers and established best practices</li>
+                        <li>Recognized for exceptional performance and converted to full-time position</li>
+                    </ul>
+                </div>
+            </div>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-    <p>Find more details on</p>
-    <div>
-        <a style="display: inline-block;text-decoration: none" href="https://github.com/nsiva7" target="_blank">
-            <div style="align-content: center">
-                <img alt="Siva Nimmala on Github" src="res/github.png" width="30" height="30">
-                <p>Github</p>
+            <!-- Resideo -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="job-title">Senior Software Engineer</h3>
+                            <p class="company-name">Resideo Technologies</p>
+                        </div>
+                        <span class="job-period">Apr 2021 - Dec 2022</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Developed Android applications for smart home IoT devices</li>
+                        <li>Built cross-platform features using Flutter, expanding market reach by 30%</li>
+                        <li>Implemented real-time device communication protocols</li>
+                        <li>App: Total Connect 2.0 - 1M+ downloads, 4.2★ rating</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- Novopay -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="job-title">Software Development Engineer I</h3>
+                            <p class="company-name">Novopay Solutions</p>
+                        </div>
+                        <span class="job-period">Sep 2020 - Mar 2021</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Developed 3 white-label fintech applications for banking clients</li>
+                        <li>Implemented secure payment gateways and biometric authentication</li>
+                        <li>Apps: DigiOSK, QueueOff, Swadeshi Pay</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Modefin -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="job-title">Android Developer</h3>
+                            <p class="company-name">Modefin</p>
+                        </div>
+                        <span class="job-period">Jan 2018 - Aug 2020</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Designed and deployed 7 banking applications across African markets</li>
+                        <li>International Assignment: Worked onsite at National Bank of Malawi (1 year)</li>
+                        <li>Hall of Fame award from Family Bank Kenya for exceptional delivery</li>
+                        <li>Successfully launched apps in 5+ countries with 500K+ users</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills" id="skills">
+    <div class="section-container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Core Technologies</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Android SDK</span>
+                    <span class="skill-tag">Jetpack Compose</span>
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">KMM</span>
+                    <span class="skill-tag">MVVM</span>
+                    <span class="skill-tag">Clean Architecture</span>
+                    <span class="skill-tag">Dagger/Hilt</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Ktor</span>
+                    <span class="skill-tag">Kobweb</span>
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">Retrofit</span>
+                    <span class="skill-tag">Room</span>
+                    <span class="skill-tag">Coroutines</span>
+                    <span class="skill-tag">Flow</span>
+                    <span class="skill-tag">LiveData</span>
+                    <span class="skill-tag">Data Binding</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Android Studio</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">Gradle</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Agile/Scrum</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fab fa-kickstarter"></i> Kotlin Ecosystem</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">KMM (Multiplatform)</span>
+                    <span class="skill-tag">Ktor Server</span>
+                    <span class="skill-tag">Ktor Client</span>
+                    <span class="skill-tag">Kobweb Framework</span>
+                    <span class="skill-tag">Kotlin/JS</span>
+                    <span class="skill-tag">Kotlin/Native</span>
+                    <span class="skill-tag">Compose Multiplatform</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-vial"></i> Testing & Quality</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">JUnit</span>
+                    <span class="skill-tag">Espresso</span>
+                    <span class="skill-tag">Mockito</span>
+                    <span class="skill-tag">UI Testing</span>
+                    <span class="skill-tag">TDD</span>
+                    <span class="skill-tag">Code Reviews</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects" id="projects">
+    <div class="section-container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Music 7 Pro -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Music 7 Pro</h3>
+                    <div class="project-stats">
+                        <span><i class="fas fa-download"></i> 1M+ Downloads</span>
+                        <span><i class="fas fa-star"></i> 4.5 Rating</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Dynamic music player with multiple UI designs and advanced features. My most successful personal project.</p>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=siva.app.music7pro" target="_blank">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Maker -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Quote Maker</h3>
+                    <div class="project-stats">
+                        <span><i class="fas fa-code-branch"></i> Open Source</span>
+                        <span><i class="fas fa-star"></i> GitHub Project</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Create beautiful quotes with emojis, texts, stickers, and drawing tools. Apply filters and effects to images.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/nsiva7/Quote-Maker" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=siva.app.quotemaker" target="_blank">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Studio -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Image Studio</h3>
+                    <div class="project-stats">
+                        <span><i class="fas fa-image"></i> Creative App</span>
+                        <span><i class="fas fa-users"></i> 10K+ Users</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Comprehensive image editing app with frames, clip-arts, text overlays, and creative filters.</p>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=siva.ultimatrix.imagestudio" target="_blank">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JSON_Siva Library -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>JSON_Siva</h3>
+                    <div class="project-stats">
+                        <span><i class="fas fa-book"></i> Library</span>
+                        <span><i class="fas fa-code"></i> Developer Tool</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Android library for parsing JSON data with enhanced error handling and improved get operations for JSON objects and arrays.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/nsiva7/JSON_Siva" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banking Apps -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Banking Applications</h3>
+                    <div class="project-stats">
+                        <span><i class="fas fa-building"></i> Enterprise</span>
+                        <span><i class="fas fa-globe"></i> 5+ Countries</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>Developed multiple banking apps including Mo626 Digital+, Family Bank, and Bank of Bhutan serving 500K+ users across Africa and Asia.</p>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.mode.nbm.ui" target="_blank">
+                            <i class="fab fa-google-play"></i> Mo626
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.mode.familykenya.ui" target="_blank">
+                            <i class="fab fa-google-play"></i> Family Bank
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Apps -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>All Applications</h3>
+                    <div class="project-stats">
+                        <span><i class="fas fa-mobile-alt"></i> 15+ Apps</span>
+                        <span><i class="fas fa-trophy"></i> Portfolio</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p>View my complete portfolio of Android applications on Google Play Store, including productivity, entertainment, and utility apps.</p>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/dev?id=6295337706296843782" target="_blank">
+                            <i class="fab fa-google-play"></i> Developer Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="section-container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <p>I'm always interested in hearing about new opportunities and challenging projects.
+                Whether you have a question or just want to say hi, feel free to reach out!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="mailto:sivanimmala.dev@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        sivanimmala.dev@gmail.com
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="tel:+919666976229">
+                        <i class="fas fa-phone"></i>
+                        +91 9666976229
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://wa.me/919666976229" target="_blank" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Message
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bangalore, India</span>
+                </div>
+            </div>
+            <div class="hero-buttons" style="justify-content: center; margin-top: 2rem;">
+                <a href="mailto:sivanimmala.dev@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Email
+                </a>
+                <a href="gallery.html" class="btn btn-secondary">
+                    <i class="fas fa-images"></i> View Gallery
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="social-links">
+        <a href="https://github.com/nsiva7" target="_blank">
+            <i class="fab fa-github"></i>
         </a>
-        <p style="display: inline-block">&nbsp;</p>
-        <a style="display: inline-block;text-decoration: none"
-           href="https://play.google.com/store/apps/dev?id=6295337706296843782" target="_blank">
-            <div style="align-content: center">
-                <img alt="Siva Nimmala on Google Playstore" src="res/playstore.png" width="30" height="30">
-                <p>Playstore</p>
-            </div>
+        <a href="https://play.google.com/store/apps/dev?id=6295337706296843782" target="_blank">
+            <i class="fab fa-google-play"></i>
         </a>
-        <p style="display: inline-block">&nbsp;</p>
-        <a style="display: inline-block;text-decoration: none"
-           href="https://www.linkedin.com/in/siva-nimmala-716959147/" target="_blank">
-            <div style="align-content: center">
-                <img alt="Siva Nimmala on LinkedIn" src="res/linkedin.png" width="30" height="30">
-                <p>LinkedIn</p>
-            </div>
+        <a href="https://www.linkedin.com/in/siva-nimmala-716959147/" target="_blank">
+            <i class="fab fa-linkedin"></i>
         </a>
     </div>
+    <p>&copy; 2025 Siva Nimmala. All rights reserved.</p>
 </footer>
 
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
+    });
+
+    // Mobile menu toggle (basic implementation)
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.right = '0';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.background = 'white';
+        navLinks.style.padding = '1rem';
+        navLinks.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe timeline items and skill categories
+    document.querySelectorAll('.timeline-item, .skill-category, .project-card').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
+    });
+</script>
 </body>
 </html>
