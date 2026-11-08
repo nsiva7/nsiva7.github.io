@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music 7 – Privacy Policy</title>
+    <meta name="description" content="How the Music 7 music player app handles your data.">
+    <link rel="shortcut icon" href="../res/siva_fav.ico" type="image/x-icon">
+    <link rel="stylesheet" href="policy.css">
+</head>
+<body>
+<header>
+    <h1>Music 7 – Privacy Policy</h1>
+    <p>Effective date: November 8, 2026</p>
+    <nav class="tabs">
+        <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="../index.html">Developer</a>
+    </nav>
+</header>
+
+<main>
+    <p>
+        This policy explains how <strong>Music 7</strong> (package <code>siva.app.musicplayer7free</code>),
+        an Android music player developed by Siva Nimmala ("we", "us"), handles information.
+        In short: your music library stays on your phone, we run no servers of our own and no
+        analytics, and we never sell your data. The free version shows ads from Google AdMob,
+        which is the main way data leaves your device; Premium subscribers see no ads.
+    </p>
+
+    <h2>1. Information that stays on your device</h2>
+    <ul>
+        <li><strong>Your music library.</strong> With the "Music and audio" (or storage) permission, Music 7 reads
+            the audio files on your device and their tags (title, artist, album, artwork, duration, folder) to
+            build your library. This is processed only on your device and is never uploaded.</li>
+        <li><strong>Your app data.</strong> Favourites, playlists, recently played and recently added lists,
+            playback position, equalizer settings, theme, language and other preferences are stored in the
+            app's private storage on your device.</li>
+        <li><strong>Microphone permission.</strong> Android requires the "Record audio" permission for the audio
+            visualizer to read the sound the app is playing. Music 7 does not record, store or send any audio
+            from your microphone. The permission is only requested when you open the visualizer.</li>
+        <li><strong>Notifications.</strong> Used only to show playback controls while music plays.</li>
+    </ul>
+    <p>Uninstalling the app or clearing its data in Android settings deletes all of this information.</p>
+
+    <h2>2. Online features and the services they contact</h2>
+    <p>Some features need the internet. When you use them, your device connects directly to the service
+        listed, which receives your IP address and the details of the request, under its own privacy policy.
+        We do not receive or store any of this.</p>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Feature</th><th>Service</th><th>What is sent</th></tr>
+            <tr>
+                <td>Discover – top charts, previews, artwork</td>
+                <td>Apple (rss.marketingtools.apple.com, itunes.apple.com)</td>
+                <td>The country you are exploring (taken from your device region or your choice) and search terms</td>
+            </tr>
+            <tr>
+                <td>Discover – trending tracks</td>
+                <td>Audius (api.audius.co)</td>
+                <td>The genre you picked and stream requests</td>
+            </tr>
+            <tr>
+                <td>Discover – live radio</td>
+                <td>Radio Browser community directory (*.api.radio-browser.info) and the radio stations you play</td>
+                <td>The country or mood you picked, and stream requests to the station</td>
+            </tr>
+            <tr>
+                <td>Online Music (Jellyfin)</td>
+                <td>Only the Jellyfin server you choose to connect</td>
+                <td>Your server address, username and password are sent only to that server. Music 7 keeps the
+                    server address and an access token on your device, encrypted with an Android Keystore key.
+                    Your password is never stored.</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>3. Advertising (free version)</h2>
+    <p>The free version of Music 7 shows banner and occasional full-screen ads provided by
+        <strong>Google AdMob</strong>. To show and measure ads and prevent fraud, the Google Mobile Ads SDK
+        collects and shares with Google and its ad partners:</p>
+    <ul>
+        <li>Device identifiers, including the Android advertising ID (where permitted) and app set ID</li>
+        <li>IP address and approximate location derived from it</li>
+        <li>Device and app information (model, OS version, language, app version)</li>
+        <li>Ad interactions, such as ad views and taps, and diagnostic information</li>
+    </ul>
+    <p>
+        Depending on your consent choices, ads may be personalised. If you are in the European Economic
+        Area, the UK or Switzerland, Music 7 asks for your consent through Google's consent message before
+        any ads are requested, and you can change your choice any time in
+        <em>Settings → Ad privacy choices</em>. Elsewhere, you can reset or delete your advertising ID or opt
+        out of personalised ads in your device's Google settings. Ads are muted and are never shown on the
+        player screen.
+    </p>
+    <p>Learn more: <a href="https://policies.google.com/technologies/partner-sites">How Google uses information
+        from apps that use its services</a> and <a href="https://policies.google.com/privacy">Google Privacy
+        Policy</a>.</p>
+
+    <h2>4. Music 7 Premium (subscriptions)</h2>
+    <p>
+        Premium is sold through <strong>Google Play Billing</strong>. Google processes your payment; we never see
+        your payment card or billing details. The app receives only a purchase confirmation (product, plan,
+        purchase state and a purchase token) from Google Play to unlock Premium, and remembers on your device
+        that you are a subscriber. Premium removes all ads, after which the AdMob SDK requests no ads. See the
+        <a href="terms.html">Terms of Use</a> for subscription details and
+        <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice">
+        Google Payments Privacy Notice</a>.
+    </p>
+
+    <h2>5. Contacting us</h2>
+    <p>If you send feedback or report an issue from the About screen, your email app opens a message to us.
+        We receive only what you choose to send (your email address and message) and use it solely to reply.</p>
+
+    <h2>6. What we do not do</h2>
+    <ul>
+        <li>No user accounts, sign-in or profiles.</li>
+        <li>No analytics, crash reporting or tracking SDKs other than Google AdMob described above.</li>
+        <li>We do not sell personal data, and we do not upload your music, playlists or listening history.</li>
+    </ul>
+
+    <h2>7. Data security and retention</h2>
+    <p>Connections to online services use HTTPS where the service supports it (some radio streams and
+        self-hosted Jellyfin servers may use plain HTTP, which you control). Data stored by the app stays on
+        your device until you delete it or uninstall the app. Data collected by Google for ads is retained under
+        Google's policies.</p>
+
+    <h2>8. Children</h2>
+    <p>Music 7 is not directed at children under 13, and we do not knowingly collect personal information from
+        children. If you are a minor, please ask a parent or guardian before buying a subscription.</p>
+
+    <h2>9. Your choices and rights</h2>
+    <ul>
+        <li>Deny or revoke permissions at any time in Android settings; the related features stop working.</li>
+        <li>Change ad consent in <em>Settings → Ad privacy choices</em> (EEA/UK/Switzerland) or your device's ad
+            settings, or remove ads entirely with Premium.</li>
+        <li>Delete all app data by clearing the app's storage or uninstalling it.</li>
+        <li>Depending on where you live (for example under the GDPR or India's DPDP Act), you may have rights to
+            access, correct or delete personal data. Because we hold no personal data on our own servers, most
+            requests are handled by the services above; contact us and we will help.</li>
+    </ul>
+
+    <h2>10. Changes to this policy</h2>
+    <p>We may update this policy when the app changes. The effective date above shows the latest version;
+        significant changes will be noted in the app's release notes.</p>
+
+    <h2>11. Contact</h2>
+    <p>Siva Nimmala · <a href="mailto:sivanimmaladev@gmail.com">sivanimmaladev@gmail.com</a></p>
+</main>
+
+<footer>© 2026 Siva Nimmala · <a href="terms.html">Terms of Use</a></footer>
+</body>
+</html>
