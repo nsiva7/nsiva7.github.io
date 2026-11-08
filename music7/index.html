@@ -4,22 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music 7 – Music Player</title>
-    <meta name="description" content="Music 7: an offline music player with themed players, an equalizer, visualizers, Discover charts and radio, and Jellyfin support.">
-    <link rel="shortcut icon" href="../res/siva_fav.ico" type="image/x-icon">
+    <meta name="description" content="Music 7: an offline music player with 20+ player themes, Jellyfin streaming, an equalizer, live visualizers, charts and world radio.">
+    <meta property="og:title" content="Music 7 – Music Player">
+    <meta property="og:description" content="20+ player themes, Jellyfin streaming, equalizer, visualizers and radio.">
+    <meta property="og:image" content="https://nsiva7.github.io/music7/img/feature-graphic.webp">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="policy.css">
     <style>
+        header.hero {
+            background:
+                radial-gradient(circle at 15% 70%, rgba(255, 64, 214, 0.35), transparent 45%),
+                radial-gradient(circle at 85% 30%, rgba(64, 224, 255, 0.30), transparent 45%),
+                linear-gradient(180deg, #0a061c, #170634);
+            padding: 2.5rem 1rem 3.5rem;
+        }
+
+        .hero img.logo {
+            width: 148px;
+            height: 148px;
+            border-radius: 32px;
+            box-shadow: 0 0 40px rgba(64, 224, 255, 0.35), 0 0 80px rgba(255, 64, 214, 0.25);
+        }
+
+        .hero h1 {
+            margin-top: 1rem;
+            font-size: 2.6rem;
+            background: linear-gradient(90deg, #ff40d6, #40e0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
         .cta {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             margin-top: 1.25rem;
-            padding: 0.7rem 1.3rem;
+            padding: 0.75rem 1.4rem;
             border-radius: 999px;
             background: #fff;
-            color: #1e40af;
-            font-weight: 600;
+            color: #1e1b4b;
+            font-weight: 700;
             text-decoration: none;
+        }
+
+        .shots {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 0.5rem 0.25rem 1rem;
+            margin: 0 -0.25rem;
+        }
+
+        .shots img {
+            flex: 0 0 auto;
+            width: 210px;
+            height: auto;
+            aspect-ratio: 9 / 16;
+            border-radius: 16px;
+            scroll-snap-align: start;
+            box-shadow: var(--shadow);
         }
 
         .features {
@@ -41,9 +88,10 @@
     </style>
 </head>
 <body>
-<header>
+<header class="hero">
+    <img class="logo" src="img/logo.webp" alt="Music 7 logo" width="148" height="148">
     <h1>Music 7</h1>
-    <p>Your music, your style — a music player with themes that change the whole player.</p>
+    <p>Your music, your style — 20+ player themes that change the whole player.</p>
     <a class="cta" href="https://play.google.com/store/apps/details?id=siva.app.musicplayer7free" target="_blank" rel="noopener">
         <i class="fab fa-google-play"></i> Get it on Google Play
     </a>
@@ -55,36 +103,48 @@
 </header>
 
 <main>
+    <h2>Screenshots</h2>
+    <div class="shots" aria-label="App screenshots">
+        <img src="img/1_player.webp" alt="Classic player with album art" loading="lazy">
+        <img src="img/2_themes.webp" alt="Cassette, vinyl and cyber player themes" loading="lazy">
+        <img src="img/3_jellyfin.webp" alt="Jellyfin server albums, artists and songs" loading="lazy">
+        <img src="img/4_hero.webp" alt="Dragon Rider premium player theme" loading="lazy">
+        <img src="img/5_colors.webp" alt="Glass Aurora theme using album art colors" loading="lazy">
+        <img src="img/6_library.webp" alt="Albums library" loading="lazy">
+        <img src="img/7_equalizer.webp" alt="Equalizer with presets" loading="lazy">
+        <img src="img/8_visualizer.webp" alt="Circle bar visualizer" loading="lazy">
+    </div>
+
     <h2>Features</h2>
     <div class="features">
+        <div class="feature">
+            <i class="fas fa-palette"></i>
+            <h3>20+ player themes</h3>
+            <p>Vinyl, cassette, cyber HUD, glass and more — each theme is a whole new player, with colors from your album art or wallpaper.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-cloud"></i>
+            <h3>Jellyfin streaming</h3>
+            <p>Connect your own Jellyfin server and play its albums, artists and folders next to the songs on your phone.</p>
+        </div>
         <div class="feature">
             <i class="fas fa-music"></i>
             <h3>Your library, offline</h3>
             <p>Songs, albums, artists, genres, folders, playlists and favourites from your phone.</p>
         </div>
         <div class="feature">
-            <i class="fas fa-palette"></i>
-            <h3>20+ player themes</h3>
-            <p>Each theme is a whole new player design, plus colors from album art or wallpaper.</p>
-        </div>
-        <div class="feature">
             <i class="fas fa-sliders"></i>
             <h3>Equalizer &amp; visualizers</h3>
-            <p>Presets, custom bands and 15 visualizer styles, full screen or behind the art.</p>
+            <p>Presets, custom bands and 15 live visualizer styles, full screen or behind the art.</p>
         </div>
         <div class="feature">
             <i class="fas fa-compass"></i>
             <h3>Discover</h3>
-            <p>Top charts by country, trending tracks and live radio from around the world.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-cloud"></i>
-            <h3>Jellyfin</h3>
-            <p>Stream your own Jellyfin music server alongside the songs on your phone.</p>
+            <p>Top charts by country, trending tracks and live radio stations from around the world.</p>
         </div>
         <div class="feature">
             <i class="fas fa-language"></i>
-            <h3>15 languages</h3>
+            <h3>27 languages</h3>
             <p>Follows your phone's language automatically, or pick one in Settings.</p>
         </div>
     </div>
