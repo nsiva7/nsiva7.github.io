@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniUI – Launcher Home Screen</title>
+    <meta name="description" content="UniUI: an Android home screen launcher with 36 themes that change the layout, widgets and icons, plus live effects like rain, snow and starry nights.">
+    <meta property="og:title" content="UniUI – Launcher Home Screen">
+    <meta property="og:description" content="One home. 36 worlds. Themes, live effects and widgets in one launcher.">
+    <meta property="og:image" content="https://nsiva7.github.io/uniui/img/feature-graphic.webp">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="policy.css">
+    <style>
+        header.hero {
+            padding: 2.5rem 1rem 3.5rem;
+        }
+
+        .hero img.logo {
+            width: 148px;
+            height: 148px;
+            border-radius: 32px;
+            filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.35)) drop-shadow(0 0 48px rgba(236, 72, 153, 0.28));
+        }
+
+        .hero h1 {
+            margin-top: 1rem;
+            font-size: 2.6rem;
+            background: linear-gradient(90deg, #22d3ee, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            padding: 0.75rem 1.4rem;
+            border-radius: 999px;
+            background: #fff;
+            color: #1e1b4b;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .shots {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 0.5rem 0.25rem 1rem;
+            margin: 0 -0.25rem;
+        }
+
+        .shots img {
+            flex: 0 0 auto;
+            width: 210px;
+            height: auto;
+            aspect-ratio: 9 / 16;
+            border-radius: 16px;
+            scroll-snap-align: start;
+            box-shadow: var(--shadow);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .feature {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .feature i { color: var(--primary-color); font-size: 1.3rem; }
+        .feature h3 { margin: 0.5rem 0 0.25rem; }
+        .feature p { margin: 0; color: var(--text-light); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+<header class="hero">
+    <img class="logo" src="img/logo.webp" alt="UniUI logo" width="148" height="148">
+    <h1>UniUI</h1>
+    <p>One home. 36 worlds. Every theme changes the layout, widgets and icons, not just the colours.</p>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=siva.app.uniui" target="_blank" rel="noopener">
+        <i class="fab fa-google-play"></i> Get it on Google Play
+    </a>
+    <nav class="tabs">
+        <a href="index.html" aria-current="page">UniUI</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Screenshots</h2>
+    <div class="shots" aria-label="App screenshots">
+        <img src="img/1_worlds.webp" alt="Nature, Fireworks and Orbit themes" loading="lazy">
+        <img src="img/2_alive.webp" alt="Aquarium and Ocean living themes" loading="lazy">
+        <img src="img/3_styles.webp" alt="Gazette newspaper, Arcade pixel game and Riso print themes" loading="lazy">
+        <img src="img/4_epic.webp" alt="Epic animated Premium themes" loading="lazy">
+        <img src="img/5_effects.webp" alt="Rain and snow live effects" loading="lazy">
+        <img src="img/6_productive.webp" alt="Tide focus timer and Transit departures themes" loading="lazy">
+        <img src="img/7_yours.webp" alt="Theme picker and the Bento theme" loading="lazy">
+        <img src="img/8_everyone.webp" alt="Clarity and Playground themes" loading="lazy">
+    </div>
+
+    <h2>Features</h2>
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-palette"></i>
+            <h3>36 themes</h3>
+            <p>A newspaper, a pixel game, Swiss tiles, an ocean, an aquarium, a garden and more. Each one is a whole new home.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-cloud-rain"></i>
+            <h3>Live effects</h3>
+            <p>Rain, snow, falling leaves and petals, a starry night sky, touch ripples, particles and a charging glow on any theme.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-border-all"></i>
+            <h3>Widgets that fit</h3>
+            <p>Clock, weather, calendar, alarms, steps, screen time, now playing and a focus timer, styled to match your theme.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-sliders"></i>
+            <h3>Make it yours</h3>
+            <p>Choose your home apps, icons, wallpaper, app drawer, folders and effects for each theme.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-child-reaching"></i>
+            <h3>For everyone</h3>
+            <p>Clarity's big, clear buttons with an SOS shortcut, and Playground, a simple home a parent can set up for kids.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-language"></i>
+            <h3>14 languages</h3>
+            <p>Follows your phone's language automatically, or pick one in More settings.</p>
+        </div>
+    </div>
+
+    <h2>UniUI Premium</h2>
+    <p>Remove all ads and unlock the epic animated themes with a monthly or yearly subscription through
+        Google Play, starting with a 7-day free trial. Cancel any time in Google Play. See the
+        <a href="terms.html">Terms of Use</a>.</p>
+
+    <h2>Support</h2>
+    <p>Questions, bug reports or ideas: <a href="mailto:sivanimmaladev@gmail.com">sivanimmaladev@gmail.com</a>,
+        or use the email link in the app's <em>About UniUI</em> screen.</p>
+    <p class="muted">Read how the app handles your data in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+</main>
+
+<footer>© 2026 <a href="../index.html">Siva Nimmala</a></footer>
+</body>
+</html>
