@@ -3,159 +3,570 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniUI – Launcher Home Screen</title>
-    <meta name="description" content="UniUI: an Android home screen launcher with 36 themes that change the layout, widgets and icons, plus live effects like rain, snow and starry nights.">
-    <meta property="og:title" content="UniUI – Launcher Home Screen">
-    <meta property="og:description" content="One home. 36 worlds. Themes, live effects and widgets in one launcher.">
+    <title>UniUI – Launcher Home Screen with 36 Themes</title>
+    <meta name="description" content="UniUI: an Android home screen launcher with 36 themes that change the layout, widgets and icons, plus live effects like rain, snow, seasons and a starry night sky.">
+    <meta property="og:title" content="UniUI – One home. 36 worlds.">
+    <meta property="og:description" content="36 home screen themes, live effects and matching widgets in one Android launcher.">
     <meta property="og:image" content="https://nsiva7.github.io/uniui/img/feature-graphic.webp">
+    <meta name="theme-color" content="#07061a">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="policy.css">
+    <link rel="stylesheet" href="../assets/app-page.css">
     <style>
-        header.hero {
-            padding: 2.5rem 1rem 3.5rem;
-        }
+        :root { --c1: #22d3ee; --c2: #c058ff; --c3: #ffb347; --grad: linear-gradient(110deg, #22d3ee, #a78bfa 50%, #ff5fa8); }
 
-        .hero img.logo {
-            width: 148px;
-            height: 148px;
-            border-radius: 32px;
-            filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.35)) drop-shadow(0 0 48px rgba(236, 72, 153, 0.28));
-        }
+        /* Hero: fanned theme phones */
+        .fan { position: relative; height: 560px; width: 100%; display: grid; place-items: center; }
+        .fan .phone { position: absolute; width: 220px; transition: transform 0.6s cubic-bezier(.2,.8,.2,1); }
+        .fan .phone:nth-child(1) { transform: translateX(-130px) rotate(-12deg) scale(0.86); }
+        .fan .phone:nth-child(2) { transform: translateX(130px) rotate(12deg) scale(0.86); }
+        .fan .phone:nth-child(3) { z-index: 2; width: 250px; }
+        .fan:hover .phone:nth-child(1) { transform: translateX(-170px) rotate(-16deg) scale(0.88); }
+        .fan:hover .phone:nth-child(2) { transform: translateX(170px) rotate(16deg) scale(0.88); }
 
-        .hero h1 {
-            margin-top: 1rem;
-            font-size: 2.6rem;
-            background: linear-gradient(90deg, #22d3ee, #a78bfa, #ec4899);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+        /* Theme explorer */
+        .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 30px; }
+        .explorer { display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: start; }
+        .preview { position: sticky; top: 100px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+        .preview h3 { font-size: 1.6rem; }
+        .preview p { color: var(--muted); font-size: 0.97rem; min-height: 4.8em; }
+        .preview .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c1); }
+        .theme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 14px; }
+        .t-card { all: unset; cursor: pointer; border-radius: 16px; overflow: hidden; position: relative; aspect-ratio: 9 / 18; background: #000; box-shadow: 0 0 0 1px var(--border); transition: transform 0.3s, box-shadow 0.3s, opacity 0.4s; }
+        .t-card img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .t-card span { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 10px 9px; font-size: 0.82rem; font-weight: 600; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fff; }
+        .t-card:hover { transform: translateY(-4px); }
+        .t-card:focus-visible { outline: 2px solid var(--c1); outline-offset: 3px; }
+        .t-card.on { box-shadow: 0 0 0 3px var(--c1), 0 14px 40px -12px var(--c1); }
+        .t-card.hide { display: none; }
+        .count-note { text-align: center; color: var(--muted); margin-top: 18px; font-size: 0.92rem; }
 
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1.25rem;
-            padding: 0.75rem 1.4rem;
-            border-radius: 999px;
-            background: #fff;
-            color: #1e1b4b;
-            font-weight: 700;
-            text-decoration: none;
-        }
+        /* Premium hero themes */
+        .epic { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; padding: clamp(24px, 4vw, 48px); }
+        .epic img { border-radius: 22px; width: min(300px, 100%); justify-self: center; box-shadow: 0 30px 70px -30px #000; }
+        .epic-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+        .epic-list div { padding: 14px 16px; border-radius: 14px; background: var(--surface-2); font-size: 0.92rem; color: var(--muted); }
+        .epic-list b { color: var(--text); display: block; font-size: 0.98rem; }
 
-        .shots {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 0.5rem 0.25rem 1rem;
-            margin: 0 -0.25rem;
-        }
+        /* Living scenes */
+        .scenes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .scene { padding: 0; }
+        .scene img { width: 100%; aspect-ratio: 9 / 13; object-fit: cover; object-position: top; transition: transform 0.8s; }
+        .scene:hover img { transform: scale(1.06); }
+        .scene .txt { padding: 18px 20px 22px; }
+        .scene h4 { font-size: 1.15rem; margin-bottom: 4px; }
+        .scene p { color: var(--muted); font-size: 0.92rem; }
+        .scene .tap { display: inline-flex; gap: 6px; align-items: center; font-size: 0.78rem; font-weight: 600; color: var(--c1); margin-top: 10px; }
 
-        .shots img {
-            flex: 0 0 auto;
-            width: 210px;
-            height: auto;
-            aspect-ratio: 9 / 16;
-            border-radius: 16px;
-            scroll-snap-align: start;
-            box-shadow: var(--shadow);
-        }
+        /* Effects playground */
+        .fx { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(30px, 6vw, 80px); align-items: center; }
+        .fx-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 24px 0; }
+        .fx-buttons .chip { justify-content: flex-start; border-radius: 14px; padding: 14px 16px; }
+        .fx-buttons .chip i { width: 18px; }
+        .fx .phone { cursor: crosshair; }
+        .fx-more { color: var(--muted); font-size: 0.95rem; }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0 0.5rem;
-        }
+        .widgets { display: flex; flex-wrap: wrap; gap: 10px; }
+        .widgets .chip i { color: var(--c1); }
 
-        .feature {
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
+        @media (max-width: 960px) {
+            .explorer, .epic, .fx { grid-template-columns: 1fr; }
+            .preview { position: static; }
+            .scenes { grid-template-columns: 1fr 1fr; }
+            .fan { height: 480px; }
         }
-
-        .feature i { color: var(--primary-color); font-size: 1.3rem; }
-        .feature h3 { margin: 0.5rem 0 0.25rem; }
-        .feature p { margin: 0; color: var(--text-light); font-size: 0.95rem; }
+        @media (max-width: 600px) {
+            .fan { height: 420px; }
+            .fan .phone { width: 170px; }
+            .fan .phone:nth-child(3) { width: 200px; }
+            .fan .phone:nth-child(1) { transform: translateX(-80px) rotate(-10deg) scale(0.84); }
+            .fan .phone:nth-child(2) { transform: translateX(80px) rotate(10deg) scale(0.84); }
+            .theme-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .epic-list, .fx-buttons { grid-template-columns: 1fr; }
+            .scenes { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .scene .txt { padding: 12px 14px 16px; }
+        }
     </style>
 </head>
 <body>
-<header class="hero">
-    <img class="logo" src="img/logo.webp" alt="UniUI logo" width="148" height="148">
-    <h1>UniUI</h1>
-    <p>One home. 36 worlds. Every theme changes the layout, widgets and icons, not just the colours.</p>
-    <a class="cta" href="https://play.google.com/store/apps/details?id=siva.app.uniui" target="_blank" rel="noopener">
-        <i class="fab fa-google-play"></i> Get it on Google Play
-    </a>
-    <nav class="tabs">
-        <a href="index.html" aria-current="page">UniUI</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-    </nav>
+<div class="glow-bg" aria-hidden="true"><span></span><span></span></div>
+
+<nav class="topnav" aria-label="UniUI">
+    <div style="display:flex;align-items:center;gap:6px">
+        <a class="brand" href="#top"><img src="img/logo.webp" alt="">UniUI</a>
+        <a class="back" href="../index.html" title="Siva Nimmala"><i class="fas fa-arrow-left"></i><span>Siva Nimmala</span></a>
+    </div>
+    <ul>
+        <li><a href="#themes">Themes</a></li>
+        <li><a href="#effects">Effects</a></li>
+        <li><a href="#yours">Customise</a></li>
+        <li><a href="#everyone">For everyone</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-primary get" href="https://play.google.com/store/apps/details?id=siva.app.uniui" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Get it</a>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+    <div class="hero-bg"><img src="img/feature-graphic.webp" alt=""></div>
+    <div class="container hero-grid">
+        <div>
+            <div class="app-id reveal">
+                <img src="img/logo.webp" alt="UniUI logo" width="88" height="88">
+                <div class="meta"><b>UniUI Launcher</b>Home screen · Android 8.1+</div>
+            </div>
+            <h1 class="reveal">One home.<br><span class="grad-text" id="worlds">36 worlds.</span></h1>
+            <p class="lead reveal">UniUI replaces your home screen, and every theme changes everything: the layout,
+                the widgets, the clock, the app drawer and the icons. A newspaper today, an aquarium tomorrow.
+                Switch in one tap and your phone feels brand new.</p>
+            <div class="hero-cta reveal">
+                <a class="btn play-badge" href="https://play.google.com/store/apps/details?id=siva.app.uniui" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span><small>Get it on</small>Google Play</span></a>
+                <a class="btn btn-ghost" href="#themes"><i class="fas fa-layer-group"></i> Explore themes</a>
+            </div>
+            <div class="hero-stats reveal">
+                <div><b><span data-count="36">36</span></b>themes</div>
+                <div><b><span data-count="15">15</span></b>built-in widgets</div>
+                <div><b><span data-count="46">46</span></b>fluid presets</div>
+                <div><b><span data-count="15">15</span></b>languages</div>
+            </div>
+        </div>
+        <div class="fan reveal">
+            <div class="phone"><div class="screen"><img src="img/themes/08_gazette.webp" alt="Gazette theme"></div></div>
+            <div class="phone"><div class="screen"><img src="img/themes/16_arcade.webp" alt="Arcade theme"></div></div>
+            <div class="phone"><div class="screen"><img src="img/themes/33_fireworks.webp" alt="Fireworks theme" id="heroShot"></div></div>
+        </div>
+    </div>
 </header>
 
-<main>
-    <h2>Screenshots</h2>
-    <div class="shots" aria-label="App screenshots">
-        <img src="img/1_worlds.webp" alt="Nature, Fireworks and Orbit themes" loading="lazy">
-        <img src="img/2_alive.webp" alt="Aquarium and Ocean living themes" loading="lazy">
-        <img src="img/3_styles.webp" alt="Gazette newspaper, Arcade pixel game and Riso print themes" loading="lazy">
-        <img src="img/4_epic.webp" alt="Epic animated Premium themes" loading="lazy">
-        <img src="img/5_effects.webp" alt="Rain and snow live effects" loading="lazy">
-        <img src="img/6_productive.webp" alt="Tide focus timer and Transit departures themes" loading="lazy">
-        <img src="img/7_yours.webp" alt="Theme picker and the Bento theme" loading="lazy">
-        <img src="img/8_everyone.webp" alt="Clarity and Playground themes" loading="lazy">
-    </div>
-
-    <h2>Features</h2>
-    <div class="features">
-        <div class="feature">
-            <i class="fas fa-palette"></i>
-            <h3>36 themes</h3>
-            <p>A newspaper, a pixel game, Swiss tiles, an ocean, an aquarium, a garden and more. Each one is a whole new home.</p>
+<!-- Theme explorer -->
+<section id="themes">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">36 themes</span>
+            <h2 class="title">Every theme is a <span class="grad-text">different home</span></h2>
+            <p class="lead2">Not just new colours. Each theme brings its own layout, widgets, icon style and app drawer. Tap one to see it.</p>
         </div>
-        <div class="feature">
-            <i class="fas fa-cloud-rain"></i>
-            <h3>Live effects</h3>
-            <p>Rain, snow, falling leaves and petals, a starry night sky, touch ripples, particles and a charging glow on any theme.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-border-all"></i>
-            <h3>Widgets that fit</h3>
-            <p>Clock, weather, calendar, alarms, steps, screen time, now playing and a focus timer, styled to match your theme.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-sliders"></i>
-            <h3>Make it yours</h3>
-            <p>Choose your home apps, icons, wallpaper, app drawer, folders and effects for each theme.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-child-reaching"></i>
-            <h3>For everyone</h3>
-            <p>Clarity's big, clear buttons with an SOS shortcut, and Playground, a simple home a parent can set up for kids.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-language"></i>
-            <h3>14 languages</h3>
-            <p>Follows your phone's language automatically, or pick one in More settings.</p>
+        <div class="filters reveal" id="filters"></div>
+        <div class="explorer">
+            <div class="preview reveal">
+                <div class="phone"><div class="screen"><img id="pvImg" src="img/themes/01_uniui.webp" alt="UniUI theme"></div></div>
+                <div>
+                    <div class="tag" id="pvTag">Calm</div>
+                    <h3 id="pvName">UniUI</h3>
+                    <p id="pvDesc"></p>
+                </div>
+            </div>
+            <div>
+                <div class="theme-grid reveal" id="themeGrid"></div>
+                <p class="count-note" id="countNote"></p>
+            </div>
         </div>
     </div>
+</section>
 
-    <h2>UniUI Premium</h2>
-    <p>Remove all ads and unlock the epic animated themes with a monthly or yearly subscription through
-        Google Play, starting with a 7-day free trial. Cancel any time in Google Play. See the
-        <a href="terms.html">Terms of Use</a>.</p>
+<!-- Premium epic themes -->
+<section style="padding-top:0">
+    <div class="container">
+        <div class="card epic reveal">
+            <img src="img/4_epic.webp" alt="Epic animated premium themes" loading="lazy">
+            <div>
+                <span class="eyebrow">★ Premium</span>
+                <h2 class="title" style="font-size:clamp(1.8rem,3.6vw,2.6rem)">7 epic animated themes</h2>
+                <p class="lead2">Cinematic homes that react to you, with matching icons and app drawers. Free users can preview them all.</p>
+                <div class="epic-list">
+                    <div><b>Glowing reactor</b>Apps in the windows of a reactor whose core dims as your battery drains.</div>
+                    <div><b>Storm sky</b>A hovering hammer in a halo of runes that calls down lightning.</div>
+                    <div><b>Dragon in the dark</b>Glowing eyes that follow your finger, under an aurora.</div>
+                    <div><b>Rainy city</b>An art-deco skyline with a signal on the clouds and bats in the rain.</div>
+                    <div><b>Armour</b>A helmet that opens to show your status, and repulsors that fire at your touch.</div>
+                    <div><b>Speed &amp; webs</b>Motion streaks and lightning, or a night city with roaming spiders.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <h2>Support</h2>
-    <p>Questions, bug reports or ideas: <a href="mailto:sivanimmaladev@gmail.com">sivanimmaladev@gmail.com</a>,
-        or use the email link in the app's <em>About UniUI</em> screen.</p>
-    <p class="muted">Read how the app handles your data in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
-</main>
+<!-- Living scenes -->
+<section id="alive">
+    <div class="container">
+        <div class="head reveal">
+            <span class="eyebrow">Living scenes</span>
+            <h2 class="title">Homes that are <span class="grad-text">alive</span></h2>
+            <p class="lead2">Four animated worlds that move, react and change. All free.</p>
+        </div>
+        <div class="scenes">
+            <div class="card scene reveal">
+                <img src="img/themes/36_aquarium.webp" alt="Aquarium theme" loading="lazy">
+                <div class="txt"><h4>Aquarium</h4><p>Tetras, angelfish, a goldfish, a betta and clownfish in a planted tank. Tropical, Planted or Night.</p><span class="tap"><i class="fas fa-hand-pointer"></i> Tap the water to feed them</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/34_ocean.webp" alt="Ocean theme" loading="lazy">
+                <div class="txt"><h4>Ocean</h4><p>Sunlight and caustics, sea grass, bubbles and a drifting moon jellyfish. The drawer rises like a swell.</p><span class="tap"><i class="fas fa-water"></i> Swipe up into the deep</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/35_nature.webp" alt="Nature theme" loading="lazy">
+                <div class="txt"><h4>Nature</h4><p>Swaying branches, a flower meadow, falling petals and butterflies. Meadow, Sakura or Autumn.</p><span class="tap"><i class="fas fa-leaf"></i> Three seasons</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/33_fireworks.webp" alt="Fireworks theme" loading="lazy">
+                <div class="txt"><h4>Fireworks</h4><p>A Diwali night with fireworks over diyas, fairy lights and a rangoli. Marigold, Peacock or Rani.</p><span class="tap"><i class="fas fa-hand-pointer"></i> Tap the diya for a volley</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<footer>© 2026 <a href="../index.html">Siva Nimmala</a></footer>
+<!-- Live effects playground -->
+<section id="effects">
+    <div class="container fx">
+        <div class="reveal">
+            <span class="eyebrow">Live effects</span>
+            <h2 class="title">Rain, snow and <span class="grad-text">starry nights</span></h2>
+            <p class="lead2">Turn on live effects over any theme. Try them here, and tap the screen for ripples.</p>
+            <div class="fx-buttons" id="fxButtons">
+                <button class="chip on" data-fx="rain"><i class="fas fa-cloud-rain"></i> Rain</button>
+                <button class="chip" data-fx="snow"><i class="fas fa-snowflake"></i> Snow</button>
+                <button class="chip" data-fx="stars"><i class="fas fa-star"></i> Night sky</button>
+                <button class="chip" data-fx="petals"><i class="fas fa-leaf"></i> Seasons</button>
+                <button class="chip" data-fx="particles"><i class="fas fa-circle-nodes"></i> Particles</button>
+                <button class="chip" data-fx="none"><i class="fas fa-ban"></i> Off</button>
+            </div>
+            <p class="fx-more">In the app you can also match rain and snow to the real weather, pick from 46 fluid
+                simulation presets, add fireflies or flurries, a charging glow around the screen edge and parallax tilt.
+                Rain gets wind, splashes and lightning; snow settles in drifts and melts.</p>
+        </div>
+        <div class="reveal" style="display:grid;place-items:center">
+            <div class="phone" id="fxPhone"><div class="screen"><img src="img/themes/11_lumen.webp" alt="Lumen theme with live effects"><canvas id="fxCanvas" aria-label="Live effects demo"></canvas></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Widgets + customise -->
+<section id="yours">
+    <div class="container">
+        <div class="feature-row reveal">
+            <div class="f-media"><img class="shot" src="img/7_yours.webp" alt="Theme picker and Bento theme" loading="lazy"></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-sliders"></i></div>
+                <h3>Make it yours</h3>
+                <p>Every theme remembers its own setup. 30 themes also have their own settings, like Arcade's palettes or Gazette's typefaces.</p>
+                <ul class="ticks">
+                    <li>Pick home apps per theme, make folders and rearrange the dock</li>
+                    <li>Theme icons or each app's own icons, separately for home and drawer</li>
+                    <li>App drawer with search, 3–6 columns, Essentials and Games folders</li>
+                    <li>The theme's wallpaper, or your own with a colour blend slider</li>
+                    <li>Double-tap to lock, and a mindful pause before distracting apps</li>
+                    <li>Theme picker filters: Calm, Bold, Productive, Playful, Night and Accessible</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+            <div class="f-media"><img class="shot" src="img/6_productive.webp" alt="Tide focus timer and Transit themes" loading="lazy"></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-table-cells-large"></i></div>
+                <h3>Widgets that fit in</h3>
+                <p>15 built-in widgets styled to match your theme. Reorder them, hide them, or make some half or full width.
+                    Your regular Android widgets work too.</p>
+                <div class="widgets">
+                    <span class="chip static"><i class="fas fa-clock"></i> Clock</span>
+                    <span class="chip static"><i class="fas fa-cloud-sun"></i> Weather</span>
+                    <span class="chip static"><i class="fas fa-calendar"></i> Up next</span>
+                    <span class="chip static"><i class="fas fa-battery-three-quarters"></i> Battery</span>
+                    <span class="chip static"><i class="fas fa-shoe-prints"></i> Steps</span>
+                    <span class="chip static"><i class="fas fa-glass-water"></i> Water</span>
+                    <span class="chip static"><i class="fas fa-music"></i> Now playing</span>
+                    <span class="chip static"><i class="fas fa-hourglass-half"></i> Screen time</span>
+                    <span class="chip static"><i class="fas fa-bed"></i> Bedtime</span>
+                    <span class="chip static"><i class="fas fa-bullseye"></i> Intention</span>
+                    <span class="chip static"><i class="fas fa-note-sticky"></i> Memos</span>
+                    <span class="chip static"><i class="fas fa-calculator"></i> Calculator</span>
+                    <span class="chip static"><i class="fas fa-globe"></i> Saved web pages</span>
+                    <span class="chip static"><i class="fas fa-clock-rotate-left"></i> Recent apps</span>
+                    <span class="chip static"><i class="fas fa-heart"></i> Favourite apps</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- For everyone -->
+<section id="everyone">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">For everyone</span>
+            <h2 class="title">A home for every person in the family</h2>
+        </div>
+        <div class="bento">
+            <div class="card wide tall reveal" style="display:flex;gap:20px;align-items:center">
+                <img src="img/themes/14_clarity.webp" alt="Clarity theme" loading="lazy" style="width:42%;border-radius:16px">
+                <div>
+                    <div class="ico"><i class="fas fa-universal-access"></i></div>
+                    <h4>Clarity</h4>
+                    <p>Large or extra-large text, high contrast, up to four favourite people one tap away, and an SOS
+                        button that opens the dialer with your emergency number.</p>
+                </div>
+            </div>
+            <div class="card wide tall reveal" style="display:flex;gap:20px;align-items:center">
+                <img src="img/themes/13_playground.webp" alt="Playground theme" loading="lazy" style="width:42%;border-radius:16px">
+                <div>
+                    <div class="ico"><i class="fas fa-child-reaching"></i></div>
+                    <h4>Playground</h4>
+                    <p>A safe, colourful home for kids: only the apps you allow, a daily time limit with a friendly
+                        meter, and a Parents corner locked with a PIN.</p>
+                </div>
+            </div>
+            <div class="card wide reveal">
+                <div class="ico"><i class="fas fa-language"></i></div>
+                <h4>15 languages</h4>
+                <p>English, हिन्दी, বাংলা, తెలుగు, தமிழ், मराठी, Español, Português, Français, Deutsch, Русский, العربية, Bahasa Indonesia, 日本語 and 简体中文.</p>
+            </div>
+            <div class="card wide reveal">
+                <div class="ico"><i class="fas fa-user-shield"></i></div>
+                <h4>Private by design</h4>
+                <p>UniUI asks for access only when a widget needs it, and you can review every permission in More settings → Access. No analytics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Screenshots -->
+<section id="screens" style="padding-left:0;padding-right:0">
+    <div class="container head center reveal">
+        <span class="eyebrow">Screenshots</span>
+        <h2 class="title">Take a closer look</h2>
+    </div>
+    <div class="gallery-wrap reveal" data-gallery id="uniGallery">
+        <div class="gallery">
+            <button aria-label="Open screenshot"><img src="img/1_worlds.webp" alt="Nature, Fireworks and Orbit themes" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/2_alive.webp" alt="Aquarium and Ocean living themes" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/3_styles.webp" alt="Gazette, Arcade and Riso themes" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/4_epic.webp" alt="Epic animated Premium themes" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/5_effects.webp" alt="Rain and snow live effects" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/6_productive.webp" alt="Tide focus timer and Transit themes" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/7_yours.webp" alt="Theme picker and the Bento theme" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/8_everyone.webp" alt="Clarity and Playground themes" loading="lazy"></button>
+        </div>
+        <div class="g-nav"><button class="g-prev" aria-label="Previous"><i class="fas fa-arrow-left"></i></button><button class="g-next" aria-label="Next"><i class="fas fa-arrow-right"></i></button></div>
+    </div>
+</section>
+
+<!-- Premium -->
+<section id="premium">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">UniUI Premium</span>
+            <h2 class="title">Free to use. <span class="grad-text">Premium for the epic.</span></h2>
+        </div>
+        <div class="plans">
+            <div class="card plan reveal">
+                <h3>Free</h3>
+                <div class="price">With ads</div>
+                <ul class="ticks">
+                    <li>29 themes, including all living scenes</li>
+                    <li>All live effects and widgets</li>
+                    <li>Preview every premium theme</li>
+                    <li class="no">7 epic animated themes</li>
+                </ul>
+            </div>
+            <div class="card plan pro reveal">
+                <h3>Premium</h3>
+                <div class="price">Monthly or yearly through Google Play</div>
+                <ul class="ticks">
+                    <li>Everything in Free</li>
+                    <li>No ads</li>
+                    <li>All 7 epic animated themes</li>
+                    <li>Free trial when Google Play offers one</li>
+                </ul>
+            </div>
+        </div>
+        <p class="fine reveal">Cancel any time in Google Play. See the <a href="terms.html">Terms of Use</a>.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2 class="title">Questions, answered</h2>
+        </div>
+        <div class="faq reveal">
+            <details><summary>How do I make UniUI my home screen?</summary><p>Open UniUI and press Home, or go to your phone's Settings → Apps → Default apps → Home app and choose UniUI. You can switch back any time.</p></details>
+            <details><summary>Will switching themes lose my setup?</summary><p>No. Each theme remembers its own home apps and settings, so you can switch freely and come back.</p></details>
+            <details><summary>Why does UniUI ask for accessibility access?</summary><p>Only for double-tap to lock the screen. UniUI does not read your screen or what you type. It's optional.</p></details>
+            <details><summary>Which permissions does it need?</summary><p>Only what a widget you use needs: calendar for events, approximate location for weather, usage access for screen time, Health Connect for steps, and notification access for now playing. Read the <a href="privacy-policy.html">Privacy Policy</a>.</p></details>
+            <details><summary>Does Playground lock my child in?</summary><p>Playground shows only the apps you allow, with a daily time limit. Settings are behind a 4-digit parent PIN, with a lockout after too many wrong tries.</p></details>
+            <details><summary>Which Android versions are supported?</summary><p>Android 8.1 and newer. Double-tap to lock needs Android 9 or newer.</p></details>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+    <div class="container">
+        <div class="card cta-band reveal">
+            <img class="logo" src="img/logo.webp" alt="" width="96" height="96">
+            <h2>Make your phone feel new every day</h2>
+            <p>Download UniUI free on Google Play. Questions or ideas? Email
+                <a href="mailto:sivanimmaladev@gmail.com">sivanimmaladev@gmail.com</a> or use the link in <em>About UniUI</em>.</p>
+            <div class="row">
+                <a class="btn play-badge" href="https://play.google.com/store/apps/details?id=siva.app.uniui" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span><small>Get it on</small>Google Play</span></a>
+                <a class="btn btn-ghost" href="../music7/"><img src="../music7/img/logo.webp" alt="" width="22" height="22" style="border-radius:6px"> Also try Music 7</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container foot">
+        <span>© 2026 <a href="../index.html">Siva Nimmala</a></span>
+        <nav aria-label="Footer">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="mailto:sivanimmaladev@gmail.com">Support</a>
+            <a href="../index.html">About the developer</a>
+        </nav>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Screenshot">
+    <button class="lb-btn lb-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+    <button class="lb-btn lb-prev" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+    <img src="" alt="">
+    <button class="lb-btn lb-next" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+</div>
+
+<script src="../assets/app-page.js"></script>
+<script>
+(() => {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Theme explorer data (the 7 premium hero themes are shown separately).
+    const T = [
+        ['01_uniui', 'UniUI', 'Calm', 'The default home: your photo in a frame, apps and widgets you drag anywhere, a dock, and all apps one swipe up.'],
+        ['02_ink', 'Ink', 'Calm', 'Text only and monochrome, with today\'s screen time and a mindful pause before distracting apps.'],
+        ['04_moss', 'Moss', 'Calm', 'Deep greens with a steps ring, a water counter and a daily intention card.'],
+        ['05_nocturne', 'Nocturne', 'Calm', 'True black for OLED, everything in thumb reach, and Bedtime in one tap: it dims the home and turns on Do Not Disturb.'],
+        ['08_gazette', 'Gazette', 'Calm', 'Your day as a newspaper front page. Your next event is the lead story, with a forecast column.'],
+        ['11_lumen', 'Lumen', 'Calm', 'A full-screen landscape (drawn, or your own photo) with a large serif clock.'],
+        ['12_haiku', 'Haiku', 'Calm', 'Three to seven chosen apps shown as words, and one line for the time.'],
+        ['18_almanac', 'Almanac', 'Calm', 'A sun-path arc from sunrise to sunset, the moon phase and seasonal colours for your city.'],
+        ['03_signal', 'Signal', 'Playful', 'A Swiss grid of live tiles for time, battery, weather, alarm and your next event.'],
+        ['07_bento', 'Bento', 'Playful', 'Mixed-size tiles for time, weather, plans and music, with a compact option.'],
+        ['09_orbit', 'Orbit', 'Playful', 'A radial thumb dial of apps around one central button, made for one hand.'],
+        ['16_arcade', 'Arcade', 'Playful', '8-bit pixel style: a high-score clock, a player card where every step earns XP, and daily quests.'],
+        ['17_riso', 'Riso', 'Playful', 'A risograph poster with two inks, misregistered type, a huge clock and a numbered app list.'],
+        ['19_vinyl', 'Vinyl', 'Playful', 'A spinning record and a tonearm that drops when you press play, with a short queue.'],
+        ['21_unique', 'Unique', 'Playful', 'The very first UniUI home from 2021, rebuilt: a side rail of apps, a photo card and a cover-flow dock.'],
+        ['22_twoParts', 'Two Parts', 'Playful', 'A clock card on top, a cover-flow dock along the divider and an app grid below.'],
+        ['23_slideSide', 'Slide Side', 'Playful', 'A day card and an app grid that slide past each other above a shared dock.'],
+        ['24_swipeUp', 'Swipe Up', 'Playful', 'A big clock with a glance card and a peeking panel you swipe up into all apps.'],
+        ['25_multimax', 'MultiMax', 'Playful', 'Tap the core ring to open four app columns. Widgets can be moved and pinch-resized.'],
+        ['13_playground', 'Playground', 'Playful', 'A safe home for kids with allowed apps, a daily time limit and a parent PIN.'],
+        ['06_tide', 'Tide', 'Productive', 'Changes for Morning, Work and Evening, with your agenda, now playing and a focus timer that holds notifications.'],
+        ['10_terminal', 'Terminal', 'Productive', 'A command-line home. Type open, apps, today, weather, battery, alarm, play or help.'],
+        ['14_clarity', 'Clarity', 'Productive', 'Big text, high contrast, favourite people one tap away and an SOS button.'],
+        ['15_taskline', 'Taskline', 'Productive', 'A to-do list you tick off right on your home, your next meeting and four work apps.'],
+        ['20_transit', 'Transit', 'Productive', 'A station-style departure board that tells you when to leave, with Maps and Wallet one tap away.'],
+        ['33_fireworks', 'Fireworks', 'Living', 'A Diwali night with fireworks over diyas and fairy lights. Tap the diya to send up a volley.'],
+        ['34_ocean', 'Ocean', 'Living', 'Sunlight, sea grass, bubbles and a drifting moon jellyfish. The drawer rises like a swell.'],
+        ['35_nature', 'Nature', 'Living', 'Swaying branches, a meadow of flowers, petals and butterflies, in Meadow, Sakura or Autumn.'],
+        ['36_aquarium', 'Aquarium', 'Living', 'A planted tank with tetras, angelfish and clownfish. Tap the water to feed them.']
+    ];
+    const grid = document.getElementById('themeGrid'), filters = document.getElementById('filters');
+    const pvImg = document.getElementById('pvImg'), pvName = document.getElementById('pvName'), pvDesc = document.getElementById('pvDesc'), pvTag = document.getElementById('pvTag');
+    const note = document.getElementById('countNote');
+    const cards = T.map(([id, name, cat, desc]) => {
+        const b = document.createElement('button');
+        b.className = 't-card'; b.dataset.cat = cat; b.setAttribute('aria-label', name + ' theme');
+        b.innerHTML = `<img src="img/themes/${id}.webp" alt="" loading="lazy"><span>${name}</span>`;
+        b.select = scroll => {
+            cards.forEach(c => c.classList.toggle('on', c === b));
+            swapScreen(pvImg, `img/themes/${id}.webp`, name + ' theme');
+            pvName.textContent = name; pvDesc.textContent = desc; pvTag.textContent = cat;
+            if (scroll && innerWidth < 960) pvImg.closest('.preview').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        };
+        b.addEventListener('click', () => b.select(true));
+        grid.appendChild(b); return b;
+    });
+    cards[0].select(false);
+    const cats = ['All', 'Calm', 'Playful', 'Productive', 'Living'];
+    const setFilter = cat => {
+        [...filters.children].forEach(f => f.classList.toggle('on', f.textContent === cat));
+        let n = 0; cards.forEach(c => { const show = cat === 'All' || c.dataset.cat === cat; c.classList.toggle('hide', !show); n += show; });
+        note.textContent = cat === 'All' ? `Showing ${n} free themes, plus 7 premium themes below.` : `${n} ${cat.toLowerCase()} themes`;
+    };
+    cats.forEach(c => { const b = document.createElement('button'); b.className = 'chip'; b.textContent = c; b.addEventListener('click', () => setFilter(c)); filters.appendChild(b); });
+    setFilter('All');
+
+    // Hero: cycle the "36 worlds" phone through a few themes
+    const heroShots = ['33_fireworks', '36_aquarium', '08_gazette', '35_nature', '16_arcade', '34_ocean'];
+    const heroImg = document.getElementById('heroShot'); let h = 0;
+    if (!reduce) setInterval(() => { h = (h + 1) % heroShots.length; swapScreen(heroImg, `img/themes/${heroShots[h]}.webp`, ''); }, 3000);
+
+    // Live effects demo on a canvas over the phone screen
+    const cv = document.getElementById('fxCanvas'), ctx = cv.getContext('2d');
+    let W = 0, H = 0, mode = 'rain', parts = [], ripples = [], shooting = null, running = false;
+    const dpr = Math.min(2, devicePixelRatio || 1);
+    const size = () => { const r = cv.getBoundingClientRect(); W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const make = () => {
+        const n = { rain: 140, snow: 90, stars: 110, petals: 28, particles: 46, none: 0 }[mode];
+        parts = Array.from({ length: n }, () => ({ x: rnd(0, W), y: rnd(0, H), v: rnd(0.4, 1), r: rnd(0, Math.PI * 2), s: rnd(0.6, 1.4), vx: rnd(-0.3, 0.3), vy: rnd(-0.3, 0.3) }));
+    };
+    const draw = () => {
+        ctx.clearRect(0, 0, W, H);
+        if (mode === 'rain') {
+            ctx.strokeStyle = 'rgba(190,220,255,0.55)'; ctx.lineWidth = 1;
+            ctx.beginPath();
+            parts.forEach(p => { p.y += 9 * p.v + 3; p.x -= 1.2; if (p.y > H) { p.y = -20; p.x = rnd(0, W + 40); } ctx.moveTo(p.x, p.y); ctx.lineTo(p.x + 2.4, p.y - 14 * p.v); });
+            ctx.stroke();
+            if (Math.random() < 0.003) { ctx.fillStyle = 'rgba(220,230,255,0.25)'; ctx.fillRect(0, 0, W, H); }
+        } else if (mode === 'snow') {
+            ctx.fillStyle = 'rgba(255,255,255,0.9)';
+            parts.forEach(p => { p.y += 0.8 * p.v + 0.3; p.r += 0.02; p.x += Math.sin(p.r) * 0.6; if (p.y > H) { p.y = -5; p.x = rnd(0, W); } ctx.beginPath(); ctx.arc(p.x, p.y, 1.2 + p.s * 1.4, 0, 7); ctx.fill(); });
+        } else if (mode === 'stars') {
+            parts.forEach(p => { p.r += 0.04 * p.v; ctx.fillStyle = `rgba(255,255,240,${0.3 + 0.7 * Math.abs(Math.sin(p.r))})`; ctx.beginPath(); ctx.arc(p.x, p.y * 0.7, p.s, 0, 7); ctx.fill(); });
+            if (!shooting && Math.random() < 0.01) shooting = { x: rnd(W * 0.3, W), y: rnd(0, H * 0.3), t: 0 };
+            if (shooting) {
+                const s = shooting; s.t += 1; const x = s.x - s.t * 7, y = s.y + s.t * 3.5;
+                const g = ctx.createLinearGradient(x, y, x + 60, y - 30); g.addColorStop(0, 'rgba(255,255,255,0.95)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+                ctx.strokeStyle = g; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 60, y - 30); ctx.stroke();
+                if (s.t > 40) shooting = null;
+            }
+        } else if (mode === 'petals') {
+            parts.forEach((p, i) => {
+                p.y += 0.9 * p.v + 0.4; p.r += 0.03; p.x += Math.sin(p.r + i) * 0.9 - 0.2; if (p.y > H + 10) { p.y = -10; p.x = rnd(0, W); }
+                ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r * 2);
+                ctx.fillStyle = i % 3 ? 'rgba(255,170,200,0.9)' : 'rgba(255,140,60,0.9)';
+                ctx.beginPath(); ctx.ellipse(0, 0, 5 * p.s, 2.6 * p.s, 0, 0, 7); ctx.fill(); ctx.restore();
+            });
+        } else if (mode === 'particles') {
+            parts.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; });
+            for (let i = 0; i < parts.length; i++) for (let j = i + 1; j < parts.length; j++) {
+                const a = parts[i], b = parts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+                if (d < 70) { ctx.strokeStyle = `rgba(150,200,255,${0.5 * (1 - d / 70)})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+            }
+            ctx.fillStyle = 'rgba(200,230,255,0.9)'; parts.forEach(p => { ctx.beginPath(); ctx.arc(p.x, p.y, 2, 0, 7); ctx.fill(); });
+        }
+        ripples = ripples.filter(r => r.t < 1);
+        ripples.forEach(r => { r.t += 0.02; ctx.strokeStyle = `rgba(255,255,255,${0.7 * (1 - r.t)})`; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(r.x, r.y, 8 + r.t * 70, 0, 7); ctx.stroke(); });
+        if (running) requestAnimationFrame(draw);
+    };
+    const setMode = m => { mode = m; make(); document.querySelectorAll('#fxButtons .chip').forEach(b => b.classList.toggle('on', b.dataset.fx === m)); if (reduce) draw(); };
+    document.querySelectorAll('#fxButtons .chip').forEach(b => b.addEventListener('click', () => setMode(b.dataset.fx)));
+    cv.addEventListener('pointerdown', e => { const r = cv.getBoundingClientRect(); ripples.push({ x: e.clientX - r.left, y: e.clientY - r.top, t: 0 }); if (reduce) draw(); });
+    // Only animate while the demo is on screen.
+    new IntersectionObserver(([e]) => {
+        if (e.isIntersecting && !running) { size(); if (!parts.length) make(); running = !reduce; draw(); }
+        else if (!e.isIntersecting) running = false;
+    }).observe(cv);
+    addEventListener('resize', () => { size(); make(); });
+})();
+</script>
 </body>
 </html>
