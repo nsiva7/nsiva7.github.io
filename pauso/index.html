@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauso – A breath before you open distracting apps</title>
+    <meta name="description" content="Pauso is an Android focus app that shows a short pause before you open distracting apps, with block schedules, daily limits and a strict mode. No ads, no account, nothing leaves your phone.">
+    <meta property="og:title" content="Pauso – A breath before you open it.">
+    <meta property="og:description" content="Pause distracting apps, set daily limits and block schedules. No ads, no account, everything on your phone.">
+    <meta property="og:image" content="https://nsiva7.github.io/pauso/img/feature-graphic.webp">
+    <meta name="theme-color" content="#07061a">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/app-page.css">
+    <style>
+        :root { --c1: #5cc8ea; --c2: #b39dff; --c3: #ffc94a; --grad: linear-gradient(110deg, #5cc8ea, #b39dff); }
+        .hero-bg img { object-position: right center; }
+
+        /* How it works */
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: step; }
+        .steps .card { padding: 28px; }
+        .steps .card::after { counter-increment: step; content: counter(step, decimal-leading-zero); position: absolute; top: 18px; right: 22px; font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 700; color: var(--surface-2); }
+        .steps .ico { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 1.15rem; margin-bottom: 16px; background: var(--grad); color: #0b0820; }
+        .steps h4 { font-size: 1.2rem; margin-bottom: 6px; }
+        .steps p { color: var(--muted); font-size: 0.95rem; }
+
+        /* Breathing ring in the hero copy */
+        .ring { display: inline-grid; place-items: center; width: 54px; height: 54px; margin-right: 12px; vertical-align: middle; }
+        .ring svg { width: 54px; height: 54px; }
+        .ring .arc { stroke: var(--c1); stroke-width: 7; stroke-linecap: round; fill: none; stroke-dasharray: 170; stroke-dashoffset: 170; animation: breathe 6s ease-in-out infinite; }
+        .ring .bars { stroke: var(--c2); stroke-width: 7; stroke-linecap: round; }
+        @keyframes breathe { 0% { stroke-dashoffset: 170; } 45%, 60% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 170; } }
+
+        .switcher .chips { margin-top: 10px; }
+        .trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .trust .card { padding: 24px; }
+        .trust .ico { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 1.15rem; margin-bottom: 14px; background: var(--surface-2); border: 1px solid var(--border); color: var(--c1); }
+        .trust h4 { font-size: 1.1rem; margin-bottom: 6px; }
+        .trust p { color: var(--muted); font-size: 0.93rem; }
+        .disclosure { max-width: 820px; margin: 28px auto 0; padding: 22px 26px; border-left: 3px solid var(--c1); background: var(--surface); border-radius: 0 18px 18px 0; color: var(--muted); font-size: 0.97rem; }
+        .disclosure b { color: var(--text); }
+
+        @media (max-width: 960px) { .steps, .trust { grid-template-columns: 1fr; } .trust { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .trust { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="glow-bg" aria-hidden="true"><span></span><span></span></div>
+
+<nav class="topnav" aria-label="Pauso">
+    <div style="display:flex;align-items:center;gap:6px">
+        <a class="brand" href="#top"><img src="img/logo.webp" alt="">Pauso</a>
+        <a class="back" href="../index.html" title="Siva Nimmala"><i class="fas fa-arrow-left"></i><span>Siva Nimmala</span></a>
+    </div>
+    <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#private">Privacy</a></li>
+        <li><a href="#premium">Premium</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-primary get" href="https://play.google.com/store/apps/details?id=com.siva.pauso" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Get it</a>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+    <div class="hero-bg"><img src="img/feature-graphic.webp" alt=""></div>
+    <div class="container hero-grid">
+        <div>
+            <div class="app-id reveal">
+                <img src="img/logo.webp" alt="Pauso logo" width="88" height="88">
+                <div class="meta"><b>Pauso</b>Focus &amp; app pauser · Android 8+</div>
+            </div>
+            <h1 class="reveal">A breath before<br><span class="grad-text">you open it.</span></h1>
+            <p class="lead reveal">Pick the apps that pull you in. The next time you open one, Pauso shows a calm
+                full-screen pause: <em>Do you really want to open this?</em> After a few seconds you can continue on
+                purpose, or close it and move on. Most of the time, that breath is all it takes.</p>
+            <div class="hero-cta reveal">
+                <a class="btn play-badge" href="https://play.google.com/store/apps/details?id=com.siva.pauso" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span><small>Get it on</small>Google Play</span></a>
+                <a class="btn btn-ghost" href="#how"><i class="fas fa-circle-pause"></i> How it works</a>
+            </div>
+            <div class="hero-stats reveal">
+                <div><b><span data-count="5">5</span>s</b>default pause</div>
+                <div><b><span data-count="0">0</span></b>ads</div>
+                <div><b><span data-count="0">0</span></b>accounts</div>
+                <div><b><span data-count="100">100</span>%</b>on your phone</div>
+            </div>
+        </div>
+        <div class="hero-phone reveal" data-switcher>
+            <div class="orbit" aria-hidden="true"></div>
+            <div class="phone"><div class="screen"><img src="img/screens/pause.webp" alt="The Pauso pause screen over Chrome"></div></div>
+            <div class="chips" style="justify-content:center;margin-top:22px">
+                <button class="chip on" data-src="img/screens/pause.webp" data-name="Pause">Pause</button>
+                <button class="chip" data-src="img/screens/block.webp" data-name="Block">Block</button>
+                <button class="chip" data-src="img/screens/strict.webp" data-name="Strict">Strict</button>
+                <button class="chip" data-src="img/screens/stats.webp" data-name="Stats">Stats</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- How it works -->
+<section id="how">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">How it works</span>
+            <h2 class="title">Three steps, <span class="grad-text">one breath</span></h2>
+            <p class="lead2">Pauso doesn't nag or lock you out of your own phone. It just puts a small gap between the reflex and the scroll.</p>
+        </div>
+        <div class="steps">
+            <div class="card reveal">
+                <div class="ico"><i class="fas fa-hand-pointer"></i></div>
+                <h4>Pick the apps</h4>
+                <p>Instagram, YouTube, X, a game, whatever eats your evenings. Three apps are free; Premium pauses as many as you like.</p>
+            </div>
+            <div class="card reveal">
+                <div class="ico"><i class="fas fa-wind"></i></div>
+                <h4>Take a breath</h4>
+                <p>Open a paused app and a calm screen appears first, with a 3 to 30 second countdown you choose per app.</p>
+            </div>
+            <div class="card reveal">
+                <div class="ico"><i class="fas fa-circle-check"></i></div>
+                <h4>Decide on purpose</h4>
+                <p>Close it and go back to your day, or continue once the countdown ends. Every open you avoid counts toward your streak.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+    <div class="container">
+        <div class="head reveal">
+            <span class="eyebrow">When a pause isn't enough</span>
+            <h2 class="title">Harder limits for <span class="grad-text">harder days</span></h2>
+            <p class="lead2">Premium adds the tools that hold the line when willpower is low: schedules, daily budgets and a strict mode with no early exit.</p>
+        </div>
+
+        <div class="feature-row reveal">
+            <div class="f-media"><img class="shot" src="img/screens/schedules.webp" alt="Pauso schedules screen" loading="lazy"></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Block schedules</h3>
+                <p>Work hours, study time, bedtime. During a schedule every paused app is fully blocked, with no "Continue" button at all.</p>
+                <ul class="ticks">
+                    <li>Any start and end time, including overnight windows</li>
+                    <li>Pick the days of the week each schedule runs</li>
+                    <li>Switch a schedule off for the day without deleting it</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+            <div class="f-media"><img class="shot" src="img/screens/detail.webp" alt="Pauso app settings with daily limit" loading="lazy"></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-hourglass-half"></i></div>
+                <h3>Daily limits</h3>
+                <p>Give an app a time budget per day. Once it's used up, the app stays closed until midnight, even mid-session.</p>
+                <ul class="ticks">
+                    <li>5 minutes to 2 hours per app</li>
+                    <li>Time is counted by Pauso itself, so no extra usage permission is needed</li>
+                    <li>See how much of today's budget is left at a glance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-row reveal">
+            <div class="f-media"><img class="shot" src="img/screens/strict.webp" alt="Pauso strict mode active" loading="lazy"></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <h3>Strict mode</h3>
+                <p>For the length you choose, Pauso can't be switched off, uninstalled, or have its apps, limits and schedules changed. It ends on its own.</p>
+                <ul class="ticks">
+                    <li>1, 2, 4 or 8 hours, or until 6 AM tomorrow</li>
+                    <li>Covers the system accessibility page and the uninstall dialog</li>
+                    <li>No early exit, on purpose</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+            <div class="f-media"><img class="shot" src="img/screens/stats.webp" alt="Pauso stats screen" loading="lazy"></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-chart-simple"></i></div>
+                <h3>Stats and streaks</h3>
+                <p>Opens avoided, opens you went through with, time spent in paused apps, and a streak of days where the pause worked.</p>
+                <ul class="ticks">
+                    <li>Today at a glance on the home screen</li>
+                    <li>Seven-day chart of opens avoided</li>
+                    <li>All counted on your phone, never uploaded</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy -->
+<section id="private">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">Private by design</span>
+            <h2 class="title">Nothing leaves your phone</h2>
+            <p class="lead2">A focus app shouldn't be another thing watching you.</p>
+        </div>
+        <div class="trust">
+            <div class="card reveal"><div class="ico"><i class="fas fa-ban"></i></div><h4>No ads</h4><p>Not in the free version, not ever. No ad SDK is in the app.</p></div>
+            <div class="card reveal"><div class="ico"><i class="fas fa-user-slash"></i></div><h4>No account</h4><p>Nothing to sign up for. Install it and start.</p></div>
+            <div class="card reveal"><div class="ico"><i class="fas fa-server"></i></div><h4>No server</h4><p>Pauso has no backend and no analytics. Your rules and stats are stored only on your device.</p></div>
+            <div class="card reveal"><div class="ico"><i class="fas fa-eye-slash"></i></div><h4>No screen reading</h4><p>Pauso only learns which app came to the front. It cannot read what is on your screen.</p></div>
+        </div>
+        <p class="disclosure reveal"><b>About the accessibility permission.</b> Pauso uses Android's Accessibility Service to
+            learn which app just came to the front, so it can show the pause screen over it. It receives only the name of
+            that app. Pauso does not read, collect or share anything on your screen. You turn the service on in system
+            settings after the app explains this. Full details in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </div>
+</section>
+
+<!-- Screenshots -->
+<section id="screens" style="padding-left:0;padding-right:0">
+    <div class="container head center reveal">
+        <span class="eyebrow">Screenshots</span>
+        <h2 class="title">Take a closer look</h2>
+    </div>
+    <div class="gallery-wrap reveal" data-gallery id="pausoGallery">
+        <div class="gallery">
+            <button aria-label="Open screenshot"><img src="img/01_store.webp" alt="The pause screen" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/02_store.webp" alt="Home screen with today's stats" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/03_store.webp" alt="Block schedules" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/04_store.webp" alt="Daily limit for an app" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/05_store.webp" alt="Strict mode" loading="lazy"></button>
+            <button aria-label="Open screenshot"><img src="img/06_store.webp" alt="Accessibility disclosure during onboarding" loading="lazy"></button>
+        </div>
+        <div class="g-nav"><button class="g-prev" aria-label="Previous"><i class="fas fa-arrow-left"></i></button><button class="g-next" aria-label="Next"><i class="fas fa-arrow-right"></i></button></div>
+    </div>
+</section>
+
+<!-- Premium -->
+<section id="premium">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">Pauso Premium</span>
+            <h2 class="title">Free to pause. <span class="grad-text">Premium to hold the line.</span></h2>
+        </div>
+        <div class="plans">
+            <div class="card plan reveal">
+                <h3>Free</h3>
+                <div class="price">No ads, no time limit</div>
+                <ul class="ticks">
+                    <li>Pause screen for up to 3 apps</li>
+                    <li>Pause length from 3 to 30 seconds</li>
+                    <li>Today's stats and streak</li>
+                    <li class="no">Block schedules, daily limits, strict mode</li>
+                </ul>
+            </div>
+            <div class="card plan pro reveal">
+                <h3>Premium</h3>
+                <div class="price">Monthly or yearly through Google Play</div>
+                <ul class="ticks">
+                    <li>Pause unlimited apps</li>
+                    <li>Block schedules for work and sleep</li>
+                    <li>Daily time limits per app</li>
+                    <li>Strict mode that can't be bypassed</li>
+                </ul>
+            </div>
+        </div>
+        <p class="fine reveal">Priced for your country. Cancel any time in Google Play. See the <a href="terms.html">Terms of Use</a>.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2 class="title">Questions, answered</h2>
+        </div>
+        <div class="faq reveal">
+            <details><summary>Why does Pauso need accessibility access?</summary><p>It's the only reliable way on Android to know the moment an app comes to the front, so the pause can appear before you start scrolling. Pauso receives the app's name and nothing else. It is configured so Android never gives it your screen content.</p></details>
+            <details><summary>Can I just tap "Continue" every time?</summary><p>Yes, after the countdown. That's the point of the free version: a pause, not a cage. If you want something firmer, Premium's schedules, daily limits and strict mode remove the "Continue" button.</p></details>
+            <details><summary>Can I get out of strict mode early?</summary><p>No. While it's on, Pauso blocks its own settings, the system accessibility page and the uninstall dialog. It ends at the time you picked. Choose a length you mean.</p></details>
+            <details><summary>What happens if my subscription ends?</summary><p>Your first three paused apps keep working with the pause screen. Schedules, limits and strict mode stop applying but are kept, so they come back if you resubscribe.</p></details>
+            <details><summary>Pauso stopped showing pauses on my phone.</summary><p>Some phones (Xiaomi, Oppo, Vivo, Samsung and others) kill background services to save battery. Open Pauso → Settings → <em>Allow running in the background</em> and exclude Pauso from battery optimisation.</p></details>
+            <details><summary>Which Android versions are supported?</summary><p>Android 8.0 and newer.</p></details>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+    <div class="container">
+        <div class="card cta-band reveal">
+            <img class="logo" src="img/logo.webp" alt="" width="96" height="96">
+            <h2>Give yourself a breath</h2>
+            <p>Download Pauso on Google Play. Questions or ideas? Email
+                <a href="mailto:sivanimmaladev@gmail.com">sivanimmaladev@gmail.com</a>.</p>
+            <div class="row">
+                <a class="btn play-badge" href="https://play.google.com/store/apps/details?id=com.siva.pauso" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span><small>Get it on</small>Google Play</span></a>
+                <a class="btn btn-ghost" href="../uniui/"><img src="../uniui/img/logo.webp" alt="" width="22" height="22" style="border-radius:6px"> Also try UniUI</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container foot">
+        <span>© 2026 <a href="../index.html">Siva Nimmala</a></span>
+        <nav aria-label="Footer">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="mailto:sivanimmaladev@gmail.com">Support</a>
+            <a href="../index.html">About the developer</a>
+        </nav>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Screenshot">
+    <button class="lb-btn lb-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+    <button class="lb-btn lb-prev" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+    <img src="" alt="">
+    <button class="lb-btn lb-next" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+</div>
+
+<script src="../assets/app-page.js"></script>
+</body>
+</html>

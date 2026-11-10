@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siva Nimmala · Senior Software Engineer (Android)</title>
-    <meta name="description" content="Siva Nimmala: Senior Software Engineer at Egen. 8+ years building Android apps with Kotlin and Jetpack Compose, and creator of Music 7 and UniUI.">
+    <meta name="description" content="Siva Nimmala: Senior Software Engineer at Egen. 8+ years building Android apps with Kotlin and Jetpack Compose, and creator of Music 7, UniUI and Pauso.">
     <meta property="og:title" content="Siva Nimmala · Senior Software Engineer (Android)">
-    <meta property="og:description" content="Senior Software Engineer at Egen. Android, Kotlin, Jetpack Compose. Creator of Music 7 and UniUI.">
+    <meta property="og:description" content="Senior Software Engineer at Egen. Android, Kotlin, Jetpack Compose. Creator of Music 7, UniUI and Pauso.">
     <meta property="og:image" content="https://nsiva7.github.io/res/profile.webp">
     <meta name="theme-color" content="#0b0b1a">
     <link rel="shortcut icon" href="res/siva_fav.ico" type="image/x-icon">
@@ -285,6 +285,8 @@
         .dots button.on { width: 22px; background: #fff; }
         .music7 { --app-c1: #ff40d6; --app-c2: #40e0ff; --app-glow: rgba(255, 64, 214, 0.5); }
         .uniui { --app-c1: #22d3ee; --app-c2: #a855f7; --app-glow: rgba(34, 211, 238, 0.5); }
+        .pauso { --app-c1: #5cc8ea; --app-c2: #b39dff; --app-glow: rgba(92, 200, 234, 0.5); }
+        .pauso .app-visual { background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--app-c1) 40%, transparent), transparent 60%), radial-gradient(circle at 70% 75%, color-mix(in srgb, var(--app-c2) 40%, transparent), transparent 60%), #0b1f2a; }
         .tag-new { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 6px; background: var(--grad); color: #fff; vertical-align: middle; margin-left: 6px; }
 
         .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
@@ -465,8 +467,8 @@
             <h1 class="reveal">Hi, I'm <span class="grad-text">Siva Nimmala</span> <span class="wave">👋</span></h1>
             <div class="roles reveal">I build <span class="typed" id="typed">Android apps people love</span></div>
             <p class="lead reveal">8+ years building Android apps with Kotlin and Jetpack Compose, from retail and smart-home apps
-                to banking apps used across Africa and Asia. In my own time I make <a href="music7/">Music 7</a> and
-                <a href="uniui/">UniUI</a>, two apps on Google Play.</p>
+                to banking apps used across Africa and Asia. In my own time I make <a href="music7/">Music 7</a>,
+                <a href="uniui/">UniUI</a> and <a href="pauso/">Pauso</a>, three apps on Google Play.</p>
             <div class="hero-cta reveal">
                 <a href="#apps" class="btn btn-primary magnetic"><i class="fas fa-mobile-screen"></i> See my apps</a>
                 <a href="#contact" class="btn btn-ghost magnetic"><i class="fas fa-paper-plane"></i> Get in touch</a>
@@ -507,8 +509,8 @@
         <div class="section-head reveal">
             <span class="eyebrow">My apps</span>
             <h2 class="section-title">Apps I design, build and ship</h2>
-            <p class="section-lead">Two apps I build end to end, from design and code to the Play Store listing.
-                Both are written in Kotlin and change their whole look with a theme, not just the colours.</p>
+            <p class="section-lead">Three apps I build end to end, from design and code to the Play Store listing.
+                All written in Kotlin and Jetpack Compose, with no ads in two of them and no account in any.</p>
         </div>
 
         <!-- Music 7 -->
@@ -586,6 +588,47 @@
                         </div>
                     </div>
                     <div class="phone side r"><div class="screen"><img class="on" src="uniui/img/themes/17_riso.webp" alt="" loading="lazy"></div></div>
+                </div>
+                <div class="dots" aria-label="Choose screenshot"></div>
+            </div>
+        </article>
+
+
+        <!-- Pauso -->
+        <article class="card app-feature pauso reveal">
+            <div class="app-copy">
+                <div class="app-title">
+                    <img src="pauso/img/logo.webp" alt="Pauso logo" width="72" height="72">
+                    <div><h3>Pauso <span class="tag-new">NEW</span></h3><span>Focus &amp; app pauser · Android</span></div>
+                </div>
+                <p>A breath before you open it. Pick the apps that pull you in and Pauso shows a calm pause screen
+                    before they open, so you decide on purpose instead of on reflex. Premium adds block schedules,
+                    daily limits and a strict mode with no early exit. No ads, no account, nothing leaves your phone.</p>
+                <div class="app-pills">
+                    <div class="app-pill"><i class="fas fa-circle-pause"></i><div><b>Pause</b>before you scroll</div></div>
+                    <div class="app-pill"><i class="fas fa-calendar-check"></i><div><b>Schedules</b>and daily limits</div></div>
+                    <div class="app-pill"><i class="fas fa-lock"></i><div><b>Strict</b>mode, no exit</div></div>
+                    <div class="app-pill"><i class="fas fa-eye-slash"></i><div><b>0</b>data collected</div></div>
+                </div>
+                <div class="app-cta">
+                    <a class="btn btn-primary magnetic" href="pauso/">Explore Pauso <i class="fas fa-arrow-right"></i></a>
+                    <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.siva.pauso" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+                </div>
+            </div>
+            <div class="app-visual">
+                <img class="banner" src="pauso/img/feature-graphic.webp" alt="" loading="lazy">
+                <div class="phones">
+                    <div class="phone side l"><div class="screen"><img class="on" src="pauso/img/screens/home.webp" alt="" loading="lazy"></div></div>
+                    <div class="phone" data-slideshow>
+                        <div class="screen">
+                            <img class="on" src="pauso/img/screens/pause.webp" alt="The pause screen" loading="lazy">
+                            <img src="pauso/img/screens/block.webp" alt="Blocked during a schedule" loading="lazy">
+                            <img src="pauso/img/screens/strict.webp" alt="Strict mode" loading="lazy">
+                            <img src="pauso/img/screens/stats.webp" alt="Stats and streaks" loading="lazy">
+                            <img src="pauso/img/screens/disclosure.webp" alt="Accessibility disclosure" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="phone side r"><div class="screen"><img class="on" src="pauso/img/screens/schedules.webp" alt="" loading="lazy"></div></div>
                 </div>
                 <div class="dots" aria-label="Choose screenshot"></div>
             </div>
@@ -859,6 +902,7 @@
         <nav aria-label="Footer">
             <a href="music7/">Music 7</a>
             <a href="uniui/">UniUI</a>
+            <a href="pauso/">Pauso</a>
             <a href="https://github.com/nsiva7" target="_blank" rel="noopener">GitHub</a>
             <a href="https://www.linkedin.com/in/siva-nimmala-716959147/" target="_blank" rel="noopener">LinkedIn</a>
         </nav>

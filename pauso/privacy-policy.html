@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauso – Privacy Policy</title>
+    <meta name="description" content="How the Pauso focus app handles your data: everything stays on your phone.">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="policy.css">
+</head>
+<body>
+<header>
+    <h1>Pauso – Privacy Policy</h1>
+    <p>Effective date: November 10, 2026</p>
+    <nav class="tabs">
+        <a href="index.html">Pauso</a>
+        <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+    </nav>
+</header>
+
+<main>
+    <p>
+        This policy explains how <strong>Pauso</strong> (package <code>com.siva.pauso</code>), an Android focus app
+        developed by Siva Nimmala ("we", "us"), handles information. In short: Pauso has no account, no server and no
+        analytics. Everything it stores stays on your phone, it shows no ads, and it never sells or shares your data.
+    </p>
+
+    <h2>1. Information that stays on your device</h2>
+    <p>Pauso keeps the following in its private app storage on your phone. None of it is uploaded anywhere.</p>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Data</th><th>Used for</th></tr>
+            <tr>
+                <td>The apps you chose to pause, with the pause length and daily limit you set for each</td>
+                <td>Knowing which apps to pause or block</td>
+            </tr>
+            <tr>
+                <td>Your block schedules</td>
+                <td>Blocking paused apps during those times</td>
+            </tr>
+            <tr>
+                <td>A record of each pause or block screen shown, and whether you continued or closed the app</td>
+                <td>Your stats and streaks</td>
+            </tr>
+            <tr>
+                <td>How long paused apps were in the foreground each day, as observed by Pauso</td>
+                <td>Enforcing daily limits and showing time in paused apps</td>
+            </tr>
+            <tr>
+                <td>Settings: onboarding state, strict-mode end time, and whether Pauso Premium is active</td>
+                <td>Running the app</td>
+            </tr>
+        </table>
+    </div>
+    <p>Uninstalling Pauso, or clearing its storage in Android settings, deletes all of it.</p>
+
+    <h2>2. Accessibility Service</h2>
+    <p>Pauso uses Android's Accessibility Service API for one purpose: to be told which app has just come to the
+        foreground, so it can show the pause or block screen over it. This is Pauso's core function; there is no other
+        way on Android to react the moment an app opens.</p>
+    <ul>
+        <li>Pauso receives only window-change events. It uses the package name of the app that came to the front and,
+            in strict mode, the title of a system Settings screen to recognise its own settings page.</li>
+        <li>Pauso does <strong>not</strong> read, record, collect or transmit the content of your screen, your
+            keystrokes, passwords, messages or anything you type.</li>
+        <li>The service is declared with <code>canRetrieveWindowContent="false"</code>, so Android does not give Pauso
+            access to on-screen content at all.</li>
+        <li>Nothing from the service is stored except the pause and usage records in section 1, which contain app
+            names and times only.</li>
+    </ul>
+
+    <h2>3. Permissions</h2>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Access</th><th>Used for</th></tr>
+            <tr><td>Accessibility service</td><td>Described in section 2.</td></tr>
+            <tr><td>Query installed apps</td><td>Showing the list of apps you can pause. The list is read when you open the picker and is not stored or sent anywhere.</td></tr>
+        </table>
+    </div>
+    <p>Pauso does not request location, contacts, camera, microphone, storage, phone, SMS, usage-access or network
+        permissions. It has no internet access of its own; Google Play Billing talks to Google Play through Google's
+        own services.</p>
+
+    <h2>4. Pauso Premium (subscriptions)</h2>
+    <p>Premium is sold through <strong>Google Play Billing</strong>. Google processes your payment; we never see your
+        payment card or billing details. The app receives only a purchase confirmation (product, plan, purchase state
+        and a purchase token) from Google Play to unlock Premium, and remembers on your device that you are a
+        subscriber. See the <a href="terms.html">Terms of Use</a> for subscription details and the
+        <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice">Google
+        Payments Privacy Notice</a>.</p>
+
+    <h2>5. Children</h2>
+    <p>Pauso is intended for users aged 18 and over and is not directed at children.</p>
+
+    <h2>6. Changes</h2>
+    <p>If this policy changes, the new version will be published at this address with a new effective date. Because
+        Pauso has no server and collects no data, changes are unlikely to affect what happens to your information.</p>
+
+    <h2>7. Contact</h2>
+    <p>Siva Nimmala · <a href="mailto:sivanimmaladev@gmail.com">sivanimmaladev@gmail.com</a></p>
+</main>
+
+<footer>© 2026 Siva Nimmala · <a href="terms.html">Terms of Use</a></footer>
+</body>
+</html>
