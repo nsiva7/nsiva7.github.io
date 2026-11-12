@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniUI – Launcher Home Screen with 36 Themes</title>
-    <meta name="description" content="UniUI: an Android home screen launcher with 36 themes that change the layout, widgets and icons, plus live effects like rain, snow, seasons and a starry night sky.">
-    <meta property="og:title" content="UniUI – One home. 36 worlds.">
-    <meta property="og:description" content="36 home screen themes, live effects and matching widgets in one Android launcher.">
+    <title>UniUI – Launcher Home Screen with 38 Themes</title>
+    <meta name="description" content="UniUI: an Android home screen launcher with 38 themes that change the layout, widgets and icons, plus live effects like rain, snow, seasons and a starry night sky.">
+    <meta property="og:title" content="UniUI – One home. 38 worlds.">
+    <meta property="og:description" content="38 home screen themes, live effects and matching widgets in one Android launcher.">
     <meta property="og:image" content="https://nsiva7.github.io/uniui/img/feature-graphic.webp">
     <meta name="theme-color" content="#07061a">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -60,6 +60,8 @@
         .scene .txt { padding: 18px 20px 22px; }
         .scene h4 { font-size: 1.15rem; margin-bottom: 4px; }
         .scene p { color: var(--muted); font-size: 0.92rem; }
+        .scenes.duo { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; margin-top: 24px; }
+        .scene .new { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c1); border: 1px solid var(--c1); border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: middle; }
         .scene .tap { display: inline-flex; gap: 6px; align-items: center; font-size: 0.78rem; font-weight: 600; color: var(--c1); margin-top: 10px; }
 
         /* Effects playground */
@@ -119,7 +121,7 @@
                 <img src="img/logo.webp" alt="UniUI logo" width="88" height="88">
                 <div class="meta"><b>UniUI Launcher</b>Home screen · Android 8.1+</div>
             </div>
-            <h1 class="reveal">One home.<br><span class="grad-text" id="worlds">36 worlds.</span></h1>
+            <h1 class="reveal">One home.<br><span class="grad-text" id="worlds">38 worlds.</span></h1>
             <p class="lead reveal">UniUI replaces your home screen, and every theme changes everything: the layout,
                 the widgets, the clock, the app drawer and the icons. A newspaper today, an aquarium tomorrow.
                 Switch in one tap and your phone feels brand new.</p>
@@ -128,7 +130,7 @@
                 <a class="btn btn-ghost" href="#themes"><i class="fas fa-layer-group"></i> Explore themes</a>
             </div>
             <div class="hero-stats reveal">
-                <div><b><span data-count="36">36</span></b>themes</div>
+                <div><b><span data-count="38">38</span></b>themes</div>
                 <div><b><span data-count="15">15</span></b>built-in widgets</div>
                 <div><b><span data-count="46">46</span></b>fluid presets</div>
                 <div><b><span data-count="15">15</span></b>languages</div>
@@ -146,7 +148,7 @@
 <section id="themes">
     <div class="container">
         <div class="head center reveal">
-            <span class="eyebrow">36 themes</span>
+            <span class="eyebrow">38 themes</span>
             <h2 class="title">Every theme is a <span class="grad-text">different home</span></h2>
             <p class="lead2">Not just new colours. Each theme brings its own layout, widgets, icon style and app drawer. Tap one to see it.</p>
         </div>
@@ -175,8 +177,8 @@
             <img src="img/4_epic.webp" alt="Epic animated premium themes" loading="lazy">
             <div>
                 <span class="eyebrow">★ Premium</span>
-                <h2 class="title" style="font-size:clamp(1.8rem,3.6vw,2.6rem)">7 epic animated themes</h2>
-                <p class="lead2">Cinematic homes that react to you, with matching icons and app drawers. Free users can preview them all.</p>
+                <h2 class="title" style="font-size:clamp(1.8rem,3.6vw,2.6rem)">9 epic animated themes</h2>
+                <p class="lead2">Cinematic homes that react to you, with matching icons and app drawers. Their motion follows you into All apps and the widget shelf. Free users can preview them all.</p>
                 <div class="epic-list">
                     <div><b>Glowing reactor</b>Apps in the windows of a reactor whose core dims as your battery drains.</div>
                     <div><b>Storm sky</b>A hovering hammer in a halo of runes that calls down lightning.</div>
@@ -184,7 +186,19 @@
                     <div><b>Rainy city</b>An art-deco skyline with a signal on the clouds and bats in the rain.</div>
                     <div><b>Armour</b>A helmet that opens to show your status, and repulsors that fire at your touch.</div>
                     <div><b>Speed &amp; webs</b>Motion streaks and lightning, or a night city with roaming spiders.</div>
+                    <div><b>Liquid glass</b>Drifting light under clear glass that bends it, with a lens you can move.</div>
+                    <div><b>Water on glass</b>A film of water over your home that ripples and bends everything under it.</div>
                 </div>
+            </div>
+        </div>
+        <div class="scenes duo">
+            <div class="card scene reveal">
+                <img src="img/themes/37_liquidglass.webp" alt="Liquid Glass theme" loading="lazy">
+                <div class="txt"><h4>Liquid Glass <small class="new">New</small></h4><p>Pools and ribbons of coloured light drift under glass that bends them: a glass tray of icons, a capsule dock and a floating lens. Aurora, Sunset, Lagoon or Graphite, in clear or frosted glass.</p><span class="tap"><i class="fas fa-hand-pointer"></i> Tap to move the lens</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/38_stillwater.webp" alt="Still Water theme" loading="lazy">
+                <div class="txt"><h4>Still Water <small class="new">New</small></h4><p>Your home under a pane of glass that holds a film of water. Rings spread and bounce off the edge, and the clock and icons bend with the waves. Pool, Sand or Slate.</p><span class="tap"><i class="fas fa-water"></i> Tap for ripples, drag for a wake</span></div>
             </div>
         </div>
     </div>
@@ -196,7 +210,7 @@
         <div class="head reveal">
             <span class="eyebrow">Living scenes</span>
             <h2 class="title">Homes that are <span class="grad-text">alive</span></h2>
-            <p class="lead2">Four animated worlds that move, react and change. All free.</p>
+            <p class="lead2">Four animated worlds that move, react and change, on your home and behind All apps and the widget shelf. All free.</p>
         </div>
         <div class="scenes">
             <div class="card scene reveal">
@@ -256,7 +270,7 @@
                 <ul class="ticks">
                     <li>Pick home apps per theme, make folders and rearrange the dock</li>
                     <li>Theme icons or each app's own icons, separately for home and drawer</li>
-                    <li>App drawer with search, 3–6 columns, Essentials and Games folders</li>
+                    <li>App drawer with search, 3–6 columns, Essentials and Games folders, and a see-through background if you like</li>
                     <li>The theme's wallpaper, or your own with a colour blend slider</li>
                     <li>Double-tap to lock, and a mindful pause before distracting apps</li>
                     <li>Theme picker filters: Calm, Bold, Productive, Playful, Night and Accessible</li>
@@ -369,7 +383,7 @@
                     <li>29 themes, including all living scenes</li>
                     <li>All live effects and widgets</li>
                     <li>Preview every premium theme</li>
-                    <li class="no">7 epic animated themes</li>
+                    <li class="no">9 epic animated themes</li>
                 </ul>
             </div>
             <div class="card plan pro reveal">
@@ -378,7 +392,7 @@
                 <ul class="ticks">
                     <li>Everything in Free</li>
                     <li>No ads</li>
-                    <li>All 7 epic animated themes</li>
+                    <li>All 9 epic animated themes</li>
                     <li>Free trial when Google Play offers one</li>
                 </ul>
             </div>
@@ -445,7 +459,7 @@
 (() => {
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Theme explorer data (the 7 premium hero themes are shown separately).
+    // Theme explorer data (the 9 premium themes are shown separately).
     const T = [
         ['01_uniui', 'UniUI', 'Calm', 'The default home: your photo in a frame, apps and widgets you drag anywhere, a dock, and all apps one swipe up.'],
         ['02_ink', 'Ink', 'Calm', 'Text only and monochrome, with today\'s screen time and a mindful pause before distracting apps.'],
@@ -498,12 +512,12 @@
     const setFilter = cat => {
         [...filters.children].forEach(f => f.classList.toggle('on', f.textContent === cat));
         let n = 0; cards.forEach(c => { const show = cat === 'All' || c.dataset.cat === cat; c.classList.toggle('hide', !show); n += show; });
-        note.textContent = cat === 'All' ? `Showing ${n} free themes, plus 7 premium themes below.` : `${n} ${cat.toLowerCase()} themes`;
+        note.textContent = cat === 'All' ? `Showing ${n} free themes, plus 9 premium themes below.` : `${n} ${cat.toLowerCase()} themes`;
     };
     cats.forEach(c => { const b = document.createElement('button'); b.className = 'chip'; b.textContent = c; b.addEventListener('click', () => setFilter(c)); filters.appendChild(b); });
     setFilter('All');
 
-    // Hero: cycle the "36 worlds" phone through a few themes
+    // Hero: cycle the "38 worlds" phone through a few themes
     const heroShots = ['33_fireworks', '36_aquarium', '08_gazette', '35_nature', '16_arcade', '34_ocean'];
     const heroImg = document.getElementById('heroShot'); let h = 0;
     if (!reduce) setInterval(() => { h = (h + 1) % heroShots.length; swapScreen(heroImg, `img/themes/${heroShots[h]}.webp`, ''); }, 3000);
