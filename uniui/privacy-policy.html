@@ -11,7 +11,7 @@
 <body>
 <header>
     <h1>UniUI – Privacy Policy</h1>
-    <p>Effective date: November 8, 2026</p>
+    <p>Effective date: November 14, 2026</p>
     <nav class="tabs">
         <a href="index.html">UniUI</a>
         <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
@@ -60,13 +60,25 @@
             <tr>
                 <td>Notification access</td>
                 <td>Reading which song or video is playing (title, artist and play/pause controls) for the
-                    "Now playing" widget. UniUI does not read, store or send the content of your
-                    notifications.</td>
+                    "Now playing" widget, and counting each app's unread notifications for the notification dots
+                    on icons. Only the app names and counts are kept, in memory while UniUI runs. UniUI does not
+                    read, store or send the content of your notifications.</td>
             </tr>
             <tr>
                 <td>Accessibility service</td>
-                <td>Only to lock the screen when you double-tap an empty part of the home screen. UniUI does not
-                    read what is on your screen or what you type.</td>
+                <td>Only to lock the screen, or open Recent apps, when you use a home gesture set to do that
+                    (double-tap to lock is the default). UniUI does not read what is on your screen or what you
+                    type.</td>
+            </tr>
+            <tr>
+                <td>Fingerprint, face or screen lock</td>
+                <td>Asking for your phone's own lock before showing hidden apps. Android checks it; UniUI never sees
+                    your fingerprint, face or PIN.</td>
+            </tr>
+            <tr>
+                <td>Work profile apps</td>
+                <td>Listing and opening the apps in your work profile under the Work tab. The list stays on your
+                    device.</td>
             </tr>
             <tr>
                 <td>Do Not Disturb access</td>
@@ -89,9 +101,11 @@
     </div>
     <p>
         <strong>Your app data</strong> – your theme and its settings, the apps you placed on your home screens,
-        folders, notes, saved web pages, tasks, alarms, Playground settings (its parent PIN is stored only as a
-        salted hash) and other preferences – is stored in the app's private storage on your device.
-        Uninstalling the app or clearing its data in Android settings deletes all of it.
+        folders, notes, saved web pages, tasks, alarms, the names you give apps and the apps you hide, your gestures,
+        Playground settings (its parent PIN is stored only as a salted hash) and other preferences – is stored in
+        the app's private storage on your device. Uninstalling the app or clearing its data in Android settings
+        deletes all of it. A backup you make in <em>More settings → Backup</em> is a file saved where you choose;
+        UniUI does not upload it.
     </p>
 
     <h2>2. Online features and the services they contact</h2>
@@ -140,9 +154,14 @@
     <h2>4. UniUI Premium (subscriptions)</h2>
     <p>
         Premium is sold through <strong>Google Play Billing</strong>. Google processes your payment; we never see
-        your payment card or billing details. The app receives only a purchase confirmation (product, plan,
-        purchase state and a purchase token) from Google Play to unlock Premium, and remembers on your device
-        that you are a subscriber. Premium removes all ads, after which the AdMob SDK requests no ads. See the
+        your payment card or billing details. The app receives a purchase confirmation (product, plan, purchase
+        state and a purchase token) from Google Play. To confirm it, the app sends the product and purchase token,
+        with a random ID for this installation, to our server (apps.sivanimmala.in), which checks the purchase
+        with Google Play and answers whether Premium is active. The server keeps the purchase token, Google
+        Play's answer about it (product, state and end date) and the installation IDs that asked, so it can answer
+        later checks quickly and stop copied or forged purchases. No name, email address or payment details are
+        sent. The app remembers on your device that you are a subscriber. Premium removes all ads, after which the
+        AdMob SDK requests no ads. See the
         <a href="terms.html">Terms of Use</a> for subscription details and the
         <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice">
         Google Payments Privacy Notice</a>.

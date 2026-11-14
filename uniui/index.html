@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniUI – Launcher Home Screen with 38 Themes</title>
-    <meta name="description" content="UniUI: an Android home screen launcher with 38 themes that change the layout, widgets and icons, plus live effects like rain, snow, seasons and a starry night sky.">
+    <meta name="description" content="UniUI: an Android home screen launcher with 38 themes that change the layout, widgets and icons, live effects like rain, snow and fireworks, Play space, hidden apps, gestures, icon packs and 8 app drawer styles.">
     <meta property="og:title" content="UniUI – One home. 38 worlds.">
     <meta property="og:description" content="38 home screen themes, live effects and matching widgets in one Android launcher.">
     <meta property="og:image" content="https://nsiva7.github.io/uniui/img/feature-graphic.webp">
@@ -61,7 +61,7 @@
         .scene h4 { font-size: 1.15rem; margin-bottom: 4px; }
         .scene p { color: var(--muted); font-size: 0.92rem; }
         .scenes.duo { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; margin-top: 24px; }
-        .scene .new { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c1); border: 1px solid var(--c1); border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: middle; }
+        .scene .new, #new .new { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c1); border: 1px solid var(--c1); border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: middle; }
         .scene .tap { display: inline-flex; gap: 6px; align-items: center; font-size: 0.78rem; font-weight: 600; color: var(--c1); margin-top: 10px; }
 
         /* Effects playground */
@@ -103,6 +103,7 @@
         <a class="back" href="../index.html" title="Siva Nimmala"><i class="fas fa-arrow-left"></i><span>Siva Nimmala</span></a>
     </div>
     <ul>
+        <li><a href="#new">New</a></li>
         <li><a href="#themes">Themes</a></li>
         <li><a href="#effects">Effects</a></li>
         <li><a href="#yours">Customise</a></li>
@@ -143,6 +144,78 @@
         </div>
     </div>
 </header>
+
+<!-- New in 2.0.6 -->
+<section id="new">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">New in 2.0.6</span>
+            <h2 class="title">Play with it. <span class="grad-text">Make it truly yours.</span></h2>
+            <p class="lead2">A full-screen space to play with your effects, new ways to see your apps, and the controls people asked for: hide apps, gestures, icon packs, notification dots and more.</p>
+        </div>
+
+        <div class="feature-row reveal">
+            <div class="f-media" style="display:grid;place-items:center"><div class="phone"><div class="screen"><img src="img/new_playspace.webp" alt="Play space with fireworks bursting where the screen was tapped" loading="lazy"></div></div></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                <h3>Play space <small class="new">★ Premium</small></h3>
+                <p>Your effects, full screen, with nothing else on it. Fireworks launch where you tap, fireflies gather round your finger, sakura petals scatter in a gust and the aurora ripples under your touch.</p>
+                <ul class="ticks">
+                    <li>Shuffle to try a new effect and colour, and keep the one you love on your home</li>
+                    <li>Dim the screen for a dark room or a bedside light; it stays awake while you play</li>
+                    <li>Open it from Home options or give it a gesture; Back leaves</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+            <div class="f-media" style="display:grid;place-items:center"><div class="phone"><div class="screen"><img src="img/new_cardstack.webp" alt="Card stack app drawer in the Liquid Glass theme" loading="lazy"></div></div></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-layer-group"></i></div>
+                <h3>8 ways to see your apps</h3>
+                <p>Grid, List, Pages and A–Z rows for everyone. Premium adds Orbit, a globe of apps you spin and pinch; Helix, a spiral that turns as you scroll; Carousel, a turning wall of columns; and Card stack, a deck of letter cards like a wallet, in your theme's own glass or cards.</p>
+                <ul class="ticks">
+                    <li>Search shows sums, phone settings, app shortcuts and the web as you type</li>
+                    <li>Personal and Work tabs when your phone has a work profile</li>
+                    <li>Orbit icon size from 80% to 160%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bento">
+            <div class="card reveal">
+                <div class="ico"><i class="fas fa-eye-slash"></i></div>
+                <h4>Hide &amp; rename apps</h4>
+                <p>Hide apps from All apps and search, behind your fingerprint, face or screen lock. Give any app the name you want.</p>
+            </div>
+            <div class="card reveal">
+                <div class="ico"><i class="fas fa-hand-pointer"></i></div>
+                <h4>Your gestures</h4>
+                <p>Swipe up or down, double tap, or swipe with two fingers: open All apps, search, Quick settings, the flashlight, any app or Play space.</p>
+            </div>
+            <div class="card reveal">
+                <div class="ico"><i class="fas fa-icons"></i></div>
+                <h4>Icon packs</h4>
+                <p>Use the icon packs you already have. Apps a pack doesn't cover get its backing, so everything matches.</p>
+            </div>
+            <div class="card reveal">
+                <div class="ico"><i class="fas fa-circle"></i></div>
+                <h4>Notification dots</h4>
+                <p>A dot on apps and folders with unread notifications. UniUI only counts them; it never reads or keeps them.</p>
+            </div>
+            <div class="card wide reveal">
+                <div class="ico"><i class="fas fa-palette"></i></div>
+                <h4>Accent &amp; day / night themes <small class="new">★ Premium</small></h4>
+                <p>Pick an accent colour for any theme, and switch to a different theme in the evening and back in the morning.</p>
+            </div>
+            <div class="card wide reveal">
+                <div class="ico"><i class="fas fa-cloud-arrow-down"></i></div>
+                <h4>Backup &amp; restore</h4>
+                <p>Save your themes, home layout, app names, gestures and effects to a file, and bring them back on a new phone.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Theme explorer -->
 <section id="themes">
@@ -249,7 +322,8 @@
                 <button class="chip" data-fx="none"><i class="fas fa-ban"></i> Off</button>
             </div>
             <p class="fx-more">In the app you can also match rain and snow to the real weather, pick from 46 fluid
-                simulation presets, add fireflies or flurries, a charging glow around the screen edge and parallax tilt.
+                simulation presets, add a charging glow around the screen edge and parallax tilt, and choose particles:
+                Dots &amp; lines, Bokeh, Embers, Geometry, Stardust, Fireworks, Fireflies, Sakura or Aurora.
                 Rain gets wind, splashes and lightning; snow settles in drifts and melts.</p>
         </div>
         <div class="reveal" style="display:grid;place-items:center">
@@ -269,10 +343,11 @@
                 <p>Every theme remembers its own setup. 30 themes also have their own settings, like Arcade's palettes or Gazette's typefaces.</p>
                 <ul class="ticks">
                     <li>Pick home apps per theme, make folders and rearrange the dock</li>
-                    <li>Theme icons or each app's own icons, separately for home and drawer</li>
-                    <li>App drawer with search, 3–6 columns, Essentials and Games folders, and a see-through background if you like</li>
+                    <li>Theme icons, each app's own icons or an icon pack, separately for home and drawer</li>
+                    <li>App drawer in 8 styles, with search, 3–6 columns, Essentials and Games folders, and a see-through background if you like</li>
                     <li>The theme's wallpaper, or your own with a colour blend slider</li>
-                    <li>Double-tap to lock, and a mindful pause before distracting apps</li>
+                    <li>Gestures you choose, hidden and renamed apps, and a mindful pause before distracting apps</li>
+                    <li>Backup and restore, so a new phone starts with your setup</li>
                     <li>Theme picker filters: Calm, Bold, Productive, Playful, Night and Accessible</li>
                 </ul>
             </div>
@@ -381,9 +456,11 @@
                 <div class="price">With ads</div>
                 <ul class="ticks">
                     <li>29 themes, including all living scenes</li>
-                    <li>All live effects and widgets</li>
+                    <li>Rain, snow, night sky, seasons, fluid and Dots &amp; lines particles</li>
+                    <li>All widgets, gestures, hidden apps, icon packs and backup</li>
+                    <li>Grid, List, Pages and A–Z rows app drawers</li>
                     <li>Preview every premium theme</li>
-                    <li class="no">9 epic animated themes</li>
+                    <li class="no">9 epic animated themes and Play space</li>
                 </ul>
             </div>
             <div class="card plan pro reveal">
@@ -393,6 +470,10 @@
                     <li>Everything in Free</li>
                     <li>No ads</li>
                     <li>All 9 epic animated themes</li>
+                    <li>Play space</li>
+                    <li>Orbit, Helix, Carousel and Card stack app drawers</li>
+                    <li>Bokeh, Embers, Geometry, Stardust, Fireworks, Fireflies, Sakura and Aurora particles, and every touch effect</li>
+                    <li>Accent colour and day / night themes</li>
                     <li>Free trial when Google Play offers one</li>
                 </ul>
             </div>
@@ -411,8 +492,11 @@
         <div class="faq reveal">
             <details><summary>How do I make UniUI my home screen?</summary><p>Open UniUI and press Home, or go to your phone's Settings → Apps → Default apps → Home app and choose UniUI. You can switch back any time.</p></details>
             <details><summary>Will switching themes lose my setup?</summary><p>No. Each theme remembers its own home apps and settings, so you can switch freely and come back.</p></details>
-            <details><summary>Why does UniUI ask for accessibility access?</summary><p>Only for double-tap to lock the screen. UniUI does not read your screen or what you type. It's optional.</p></details>
-            <details><summary>Which permissions does it need?</summary><p>Only what a widget you use needs: calendar for events, approximate location for weather, usage access for screen time, Health Connect for steps, and notification access for now playing. Read the <a href="privacy-policy.html">Privacy Policy</a>.</p></details>
+            <details><summary>Why does UniUI ask for accessibility access?</summary><p>Only to lock the screen, or open Recent apps, when you use a gesture for it (double-tap to lock is the default). UniUI does not read your screen or what you type. It's optional.</p></details>
+            <details><summary>Which permissions does it need?</summary><p>Only what a feature you use needs: calendar for events, approximate location for weather, usage access for screen time, Health Connect for steps, and notification access for now playing and notification dots (UniUI only counts notifications). Read the <a href="privacy-policy.html">Privacy Policy</a>.</p></details>
+            <details><summary>Can I hide apps?</summary><p>Yes. Hold an app and choose Hide, or use More settings → Hidden apps. Hidden apps leave All apps and search, and can be locked behind your fingerprint, face or screen lock. Apps you placed on the home stay there.</p></details>
+            <details><summary>Does UniUI support icon packs?</summary><p>Yes, the common icon pack format used by most packs on Google Play. Pick one in More settings → Home screen → Icon pack.</p></details>
+            <details><summary>How do I move my setup to a new phone?</summary><p>More settings → Backup → Back up saves a file. On the new phone, install UniUI and use Restore with that file. Android widgets need adding again.</p></details>
             <details><summary>Does Playground lock my child in?</summary><p>Playground shows only the apps you allow, with a daily time limit. Settings are behind a 4-digit parent PIN, with a lockout after too many wrong tries.</p></details>
             <details><summary>Which Android versions are supported?</summary><p>Android 8.1 and newer. Double-tap to lock needs Android 9 or newer.</p></details>
         </div>
