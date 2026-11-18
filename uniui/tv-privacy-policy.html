@@ -11,7 +11,7 @@
 <body>
 <header>
     <h1>UniUI TV – Privacy Policy</h1>
-    <p>Effective date: November 16, 2026 (updated for the Home button helper and the screen saver)</p>
+    <p>Effective date: November 18, 2026 (updated for weather, Now playing, and app lock and kids mode)</p>
     <nav class="tabs">
         <a href="index.html">UniUI</a>
         <a href="privacy-policy.html">UniUI Privacy Policy</a>
@@ -24,8 +24,9 @@
         This policy explains how <strong>UniUI TV</strong> (package <code>siva.app.uniui.tv</code>), a home
         screen launcher for Android TV and Google TV developed by Siva Nimmala ("we", "us"), handles information.
         In short: everything UniUI TV shows on your TV's home screen is read and kept on your TV. It shows no ads,
-        has no analytics, and we never sell your data. The only time data leaves your TV because of UniUI TV is
-        when it checks a Premium subscription (section 2).
+        has no analytics, and we never sell your data. Data leaves your TV because of UniUI TV in only two cases:
+        when it checks a Premium subscription (section 2), and, if you choose to show the weather, when it looks
+        up the place you typed and its forecast (section 3).
     </p>
 
     <h2>1. Information that stays on your TV</h2>
@@ -55,6 +56,14 @@
                     never uploaded.</td>
             </tr>
             <tr>
+                <td>Notification access (Now playing)</td>
+                <td>Only if you turn it on, after UniUI TV explains it: Android shares what other apps are playing
+                    only with apps that have Notification access. UniUI TV uses it to read the title, the artist and
+                    whether it is playing, so it can show that on the home screen and in quick settings with play
+                    and pause. It does not read your notifications, and what it sees is not stored or sent anywhere.
+                    Turn it off any time in the TV's Notification access settings.</td>
+            </tr>
+            <tr>
                 <td>Uninstall requests</td>
                 <td>Opening Android's own uninstall screen when you choose Uninstall on an app. Android asks you to
                     confirm; UniUI TV never removes an app by itself.</td>
@@ -63,8 +72,10 @@
     </div>
     <p>
         Your settings – your theme and its style, your favourite apps and their order, the apps you hide, the
-        apps you opened recently, the clock format and other preferences – are stored in the app's private
-        storage on your TV. Clearing the app's storage or uninstalling it deletes all of it.
+        apps you opened recently, the clock format, your names for the TV's inputs, your own home rows, the
+        night theme and screen saver choices, the place you chose for the weather and other preferences – are
+        stored in the app's private storage on your TV. If you set a PIN for app lock and kids mode, only a
+        scrambled form (a hash) of it is stored, along with which apps are locked or allowed for kids. Clearing the app's storage or uninstalling it deletes all of it.
     </p>
 
     <h2>2. UniUI TV Premium (subscriptions)</h2>
@@ -83,27 +94,46 @@
     </p>
     <p>You can manage or cancel the subscription at any time in Google Play.</p>
 
-    <h2>3. What we do not do</h2>
+    <h2>3. Weather beside the clock (optional)</h2>
+    <p>
+        The weather is off until you type a place in Settings. When you do, UniUI TV does two things:
+    </p>
+    <ul>
+        <li>It asks your TV's own place search (Android's geocoder, which on most TVs is provided by Google) to
+            find the place name you typed. This happens once, when you set or change the place.</li>
+        <li>About every half hour while the launcher is in use, it asks the open forecast service of
+            <a href="https://api.met.no/">MET Norway</a> (the Norwegian Meteorological Institute) for the forecast
+            at that place's coordinates, rounded to about one kilometre. The request names the app and its
+            version, and, like any internet request, the service sees your TV's IP address.</li>
+    </ul>
+    <p>
+        The place is one you type, not your TV's location: UniUI TV never asks for location access. Nothing that
+        identifies you or your TV is added to these requests, and we receive none of this ourselves. Clear the
+        place in Settings to turn the weather off. Weather data is from MET Norway.
+    </p>
+
+    <h2>4. What we do not do</h2>
     <ul>
         <li>No ads, with or without Premium.</li>
         <li>No user accounts, sign-in or profiles.</li>
         <li>No analytics, crash reporting or tracking SDKs.</li>
-        <li>No location, microphone, camera or contacts access.</li>
+        <li>No location, microphone, camera or contacts access. The weather uses only a place you type.</li>
         <li>We do not sell personal data, and we do not upload your app list or any other data the launcher
             shows.</li>
     </ul>
 
-    <h2>4. Data security and retention</h2>
-    <p>The Premium check uses HTTPS. Data stored by the app stays on your TV until you delete it or uninstall the
+    <h2>5. Data security and retention</h2>
+    <p>The Premium check and the weather requests use HTTPS. Data stored by the app stays on your TV until you delete it or uninstall the
         app. Purchase records on our server are kept while they are needed to confirm the subscription and to
-        prevent misuse; you can ask us to delete them (section 6).</p>
+        prevent misuse; you can ask us to delete them (section 7).</p>
 
-    <h2>5. Children</h2>
+    <h2>6. Children</h2>
     <p>UniUI TV is meant for a general audience and is not directed at children under 13. We do not knowingly
         collect personal information from children. If you are a minor, please ask a parent or guardian before
-        buying a subscription.</p>
+        buying a subscription. Kids mode only limits which apps this launcher shows; it collects nothing about
+        the people using the TV.</p>
 
-    <h2>6. Your choices and rights</h2>
+    <h2>7. Your choices and rights</h2>
     <ul>
         <li>Delete all app data by clearing the app's storage or uninstalling it.</li>
         <li>Depending on where you live (for example under the GDPR or India's DPDP Act), you may have rights to
@@ -111,11 +141,11 @@
             email us; we will reply within 30 days.</li>
     </ul>
 
-    <h2>7. Changes to this policy</h2>
+    <h2>8. Changes to this policy</h2>
     <p>We may update this policy when the app changes. The effective date above shows the latest version;
         significant changes will be noted in the app's release notes.</p>
 
-    <h2>8. Contact</h2>
+    <h2>9. Contact</h2>
     <p>Siva Nimmala · <a href="mailto:sivanimmaladev@gmail.com">sivanimmaladev@gmail.com</a></p>
 </main>
 
