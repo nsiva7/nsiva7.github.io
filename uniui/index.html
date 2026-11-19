@@ -92,6 +92,12 @@
             .scenes { grid-template-columns: 1fr 1fr; gap: 10px; }
             .scene .txt { padding: 12px 14px 16px; }
         }
+
+        /* Intro video: a thumbnail that loads the YouTube player only when tapped */
+        .video-frame { position: relative; display: block; width: min(960px, 100%); margin: 0 auto; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: #000; box-shadow: 0 30px 90px rgba(120, 80, 255, 0.28); cursor: pointer; padding: 0; }
+        .video-frame img, .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+        .video-frame .play { position: absolute; left: 50%; top: 50%; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%; display: grid; place-items: center; background: var(--grad); color: #fff; font-size: 30px; padding-left: 6px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5); transition: transform 0.25s; }
+        .video-frame:hover .play, .video-frame:focus-visible .play { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -128,6 +134,7 @@
                 Switch in one tap and your phone feels brand new.</p>
             <div class="hero-cta reveal">
                 <a class="btn play-badge" href="https://play.google.com/store/apps/details?id=siva.app.uniui" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span><small>Get it on</small>Google Play</span></a>
+                <a class="btn btn-ghost" href="#video"><i class="fas fa-play"></i> Watch the video</a>
                 <a class="btn btn-ghost" href="#themes"><i class="fas fa-layer-group"></i> Explore themes</a>
             </div>
             <div class="hero-stats reveal">
@@ -144,6 +151,21 @@
         </div>
     </div>
 </header>
+
+<!-- Intro video -->
+<section id="video" style="padding-bottom:0">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">Watch</span>
+            <h2 class="title">UniUI in <span class="grad-text">48 seconds.</span></h2>
+            <p class="lead2">Living themes, live effects and a home that is yours, all recorded from the app.</p>
+        </div>
+        <button class="video-frame reveal" id="introVideo" type="button" aria-label="Play the UniUI intro video">
+            <img src="img/intro-video.webp" alt="UniUI Launcher intro video" width="1280" height="720" loading="lazy">
+            <span class="play"><i class="fas fa-play"></i></span>
+        </button>
+    </div>
+</section>
 
 <!-- New in 2.0.6 -->
 <section id="new">
@@ -540,6 +562,11 @@
 
 <script src="../assets/app-page.js"></script>
 <script>
+    // Intro video: swap the thumbnail for the YouTube player on tap (no YouTube requests before that).
+    document.getElementById('introVideo').addEventListener('click', function () {
+        this.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/7j3piAgUmIg?autoplay=1&rel=0" title="UniUI Launcher intro video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    }, { once: true });
+
 (() => {
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
