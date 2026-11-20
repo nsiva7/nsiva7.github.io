@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniUI – Launcher Home Screen with 38 Themes</title>
-    <meta name="description" content="UniUI: an Android home screen launcher with 38 themes that change the layout, widgets and icons, live effects like rain, snow and fireworks, Play space, hidden apps, gestures, icon packs and 8 app drawer styles.">
-    <meta property="og:title" content="UniUI – One home. 38 worlds.">
-    <meta property="og:description" content="38 home screen themes, live effects and matching widgets in one Android launcher.">
+    <title>UniUI – Launcher Home Screen with 44 Themes</title>
+    <meta name="description" content="UniUI: an Android home screen launcher with 44 themes that change the layout, widgets and icons, live effects like rain, snow and fireworks, Play space, Mindful pause, hidden apps, gestures, icon packs and 8 app drawer styles. Free, with Premium monthly, yearly or for life.">
+    <meta property="og:title" content="UniUI – One home. 44 worlds.">
+    <meta property="og:description" content="44 home screen themes, live effects and matching widgets in one Android launcher.">
     <meta property="og:image" content="https://nsiva7.github.io/uniui/img/feature-graphic.webp">
     <meta name="theme-color" content="#07061a">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -61,6 +61,16 @@
         .scene h4 { font-size: 1.15rem; margin-bottom: 4px; }
         .scene p { color: var(--muted); font-size: 0.92rem; }
         .scenes.duo { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; margin-top: 24px; }
+        .plan-pick { width: min(340px, 100%); padding: 22px; display: grid; gap: 10px; }
+        .pp-row { display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface-2); }
+        .pp-row i { width: 20px; text-align: center; color: var(--c1); }
+        .pp-row b { display: block; }
+        .pp-row span { color: var(--muted); font-size: 0.88rem; }
+        .pp-row.on { background: var(--grad); border-color: transparent; color: #0b0820; }
+        .pp-row.on i, .pp-row.on span { color: #0b0820; }
+        .pp-code { text-align: center; color: var(--muted); font-size: 0.9rem; padding-top: 6px; }
+        .scenes.trio { grid-template-columns: repeat(3, minmax(0, 300px)); justify-content: center; margin-top: 16px; }
+        @media (max-width: 760px) { .scenes.trio { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
         .scene .new, #new .new { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c1); border: 1px solid var(--c1); border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: middle; }
         .scene .tap { display: inline-flex; gap: 6px; align-items: center; font-size: 0.78rem; font-weight: 600; color: var(--c1); margin-top: 10px; }
 
@@ -128,7 +138,7 @@
                 <img src="img/logo.webp" alt="UniUI logo" width="88" height="88">
                 <div class="meta"><b>UniUI Launcher</b>Home screen · Android 8.1+</div>
             </div>
-            <h1 class="reveal">One home.<br><span class="grad-text" id="worlds">38 worlds.</span></h1>
+            <h1 class="reveal">One home.<br><span class="grad-text" id="worlds">44 worlds.</span></h1>
             <p class="lead reveal">UniUI replaces your home screen, and every theme changes everything: the layout,
                 the widgets, the clock, the app drawer and the icons. A newspaper today, an aquarium tomorrow.
                 Switch in one tap and your phone feels brand new.</p>
@@ -138,7 +148,7 @@
                 <a class="btn btn-ghost" href="#themes"><i class="fas fa-layer-group"></i> Explore themes</a>
             </div>
             <div class="hero-stats reveal">
-                <div><b><span data-count="38">38</span></b>themes</div>
+                <div><b><span data-count="44">44</span></b>themes</div>
                 <div><b><span data-count="15">15</span></b>built-in widgets</div>
                 <div><b><span data-count="46">46</span></b>fluid presets</div>
                 <div><b><span data-count="15">15</span></b>languages</div>
@@ -167,8 +177,67 @@
     </div>
 </section>
 
-<!-- New in 2.0.6 -->
+<!-- New in 2.0.7 -->
 <section id="new">
+    <div class="container">
+        <div class="head center reveal">
+            <span class="eyebrow">New in 2.0.7</span>
+            <h2 class="title">Premium for life. <span class="grad-text">Six new worlds.</span></h2>
+            <p class="lead2">The things people asked for most: Premium you pay for once, promo codes, a mindful pause before the apps that pull you in, and six new Premium themes.</p>
+        </div>
+
+        <div class="feature-row reveal">
+            <div class="f-media" style="display:grid;place-items:center">
+                <div class="card plan-pick" aria-label="UniUI Premium plans: Yearly, Monthly and Lifetime">
+                    <div class="pp-row"><i class="fas fa-calendar"></i><div><b>Yearly</b><span>Best value</span></div></div>
+                    <div class="pp-row"><i class="fas fa-calendar-day"></i><div><b>Monthly</b><span>Cancel any time</span></div></div>
+                    <div class="pp-row on"><i class="fas fa-infinity"></i><div><b>Lifetime</b><span>Pay once, Premium forever</span></div></div>
+                    <div class="pp-code"><i class="fas fa-ticket"></i> Have a promo code?</div>
+                </div>
+            </div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-infinity"></i></div>
+                <h3>Premium for life <small class="new">New</small></h3>
+                <p>Pay once and keep Premium forever, next to the monthly and yearly plans. No renewals, and everything that comes to Premium later is yours too.</p>
+                <ul class="ticks">
+                    <li>Already subscribed? Switch to Lifetime from the Premium screen, then cancel the subscription in Google Play</li>
+                    <li>Got a promo code? Tap “Have a promo code?” and the discounted prices show on the plans before you pay</li>
+                    <li>Bought on Google Play, so it follows your Google account to a new phone</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+            <div class="f-media" style="display:grid;place-items:center"><div class="phone"><div class="screen"><img src="img/new_mindful.webp" alt="Mindful pause asking before a chosen app opens" loading="lazy"></div></div></div>
+            <div class="f-copy">
+                <div class="icon"><i class="fas fa-spa"></i></div>
+                <h3>Mindful pause <small class="new">★ Premium</small></h3>
+                <p>Before an app you chose opens from UniUI, a short pause asks whether you really want it. It works in every theme, from the home, All apps and search.</p>
+                <ul class="ticks">
+                    <li>A pause of 3 to 30 seconds and a daily limit for each app</li>
+                    <li>Block schedules, when paused apps don't open at all</li>
+                    <li>Stats: times you stepped back, went in anyway, and your streak</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bento">
+            <div class="card wide reveal">
+                <div class="ico"><i class="fas fa-robot"></i></div>
+                <h4>Six new Premium themes</h4>
+                <p>Mech Shift, an armoured truck that shifts into a robot at your touch, and five homes drawn from art: Saffron, Porcelain, Tessera, Canopy and Melt. <a href="#premium-themes">See them</a>.</p>
+            </div>
+            <div class="card wide reveal">
+                <div class="ico"><i class="fas fa-battery-quarter"></i></div>
+                <h4>Calm motion</h4>
+                <p>In Battery Saver, or when the battery is low, live themes and effects hold still to save power. Choose Off, Battery Saver or Always in More settings → Battery.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New in 2.0.6 -->
+<section id="new206">
     <div class="container">
         <div class="head center reveal">
             <span class="eyebrow">New in 2.0.6</span>
@@ -243,7 +312,7 @@
 <section id="themes">
     <div class="container">
         <div class="head center reveal">
-            <span class="eyebrow">38 themes</span>
+            <span class="eyebrow">44 themes</span>
             <h2 class="title">Every theme is a <span class="grad-text">different home</span></h2>
             <p class="lead2">Not just new colours. Each theme brings its own layout, widgets, icon style and app drawer. Tap one to see it.</p>
         </div>
@@ -266,13 +335,13 @@
 </section>
 
 <!-- Premium epic themes -->
-<section style="padding-top:0">
+<section id="premium-themes" style="padding-top:0">
     <div class="container">
         <div class="card epic reveal">
             <img src="img/4_epic.webp" alt="Epic animated premium themes" loading="lazy">
             <div>
                 <span class="eyebrow">★ Premium</span>
-                <h2 class="title" style="font-size:clamp(1.8rem,3.6vw,2.6rem)">9 epic animated themes</h2>
+                <h2 class="title" style="font-size:clamp(1.8rem,3.6vw,2.6rem)">15 premium themes</h2>
                 <p class="lead2">Cinematic homes that react to you, with matching icons and app drawers. Their motion follows you into All apps and the widget shelf. Free users can preview them all.</p>
                 <div class="epic-list">
                     <div><b>Glowing reactor</b>Apps in the windows of a reactor whose core dims as your battery drains.</div>
@@ -283,17 +352,45 @@
                     <div><b>Speed &amp; webs</b>Motion streaks and lightning, or a night city with roaming spiders.</div>
                     <div><b>Liquid glass</b>Drifting light under clear glass that bends it, with a lens you can move.</div>
                     <div><b>Water on glass</b>A film of water over your home that ripples and bends everything under it.</div>
+                    <div><b>Mech in a bay</b>An armoured truck that shifts into a robot when you tap it, with a target lock under your finger.</div>
+                    <div><b>Drawn from art</b>Saffron, Porcelain, Tessera, Canopy and Melt, each home laid out like its own poster.</div>
                 </div>
             </div>
         </div>
         <div class="scenes duo">
             <div class="card scene reveal">
                 <img src="img/themes/37_liquidglass.webp" alt="Liquid Glass theme" loading="lazy">
-                <div class="txt"><h4>Liquid Glass <small class="new">New</small></h4><p>Pools and ribbons of coloured light drift under glass that bends them: a glass tray of icons, a capsule dock and a floating lens. Aurora, Sunset, Lagoon or Graphite, in clear or frosted glass.</p><span class="tap"><i class="fas fa-hand-pointer"></i> Tap to move the lens</span></div>
+                <div class="txt"><h4>Liquid Glass</h4><p>Pools and ribbons of coloured light drift under glass that bends them: a glass tray of icons, a capsule dock and a floating lens. Aurora, Sunset, Lagoon or Graphite, in clear or frosted glass.</p><span class="tap"><i class="fas fa-hand-pointer"></i> Tap to move the lens</span></div>
             </div>
             <div class="card scene reveal">
                 <img src="img/themes/38_stillwater.webp" alt="Still Water theme" loading="lazy">
-                <div class="txt"><h4>Still Water <small class="new">New</small></h4><p>Your home under a pane of glass that holds a film of water. Rings spread and bounce off the edge, and the clock and icons bend with the waves. Pool, Sand or Slate.</p><span class="tap"><i class="fas fa-water"></i> Tap for ripples, drag for a wake</span></div>
+                <div class="txt"><h4>Still Water</h4><p>Your home under a pane of glass that holds a film of water. Rings spread and bounce off the edge, and the clock and icons bend with the waves. Pool, Sand or Slate.</p><span class="tap"><i class="fas fa-water"></i> Tap for ripples, drag for a wake</span></div>
+            </div>
+        </div>
+        <div class="scenes trio">
+            <div class="card scene reveal">
+                <img src="img/themes/39_mechshift.webp" alt="Mech Shift theme" loading="lazy">
+                <div class="txt"><h4>Mech Shift <small class="new">New</small></h4><p>An armoured mech in a vehicle bay: a truck (Titan) or a sports car (Striker) that shifts into a robot, every panel moving to its place and locking with a flash. Apps sit on armour plates and All apps opens like blast doors.</p><span class="tap"><i class="fas fa-hand-pointer"></i> Tap the mech to shift it</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/40_saffron.webp" alt="Saffron theme" loading="lazy">
+                <div class="txt"><h4>Saffron <small class="new">New</small></h4><p>A raised saffron slab over drifting wire squares, with a huge date, the time in words and in thin outlined numerals, and your apps in outlined squares.</p><span class="tap"><i class="fas fa-hand-pointer"></i> Tap the wall to spin the squares</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/41_porcelain.webp" alt="Porcelain theme" loading="lazy">
+                <div class="txt"><h4>Porcelain <small class="new">New</small></h4><p>A soft home in glazed porcelain: your name in big type, a rail of black beads and a big black dial whose arc fills with the day. Cards press in under your finger.</p><span class="tap"><i class="fas fa-circle-notch"></i> All apps opens out of the dial</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/42_tessera.webp" alt="Tessera theme" loading="lazy">
+                <div class="txt"><h4>Tessera <small class="new">New</small></h4><p>A mosaic of colour tiles, with live tiles for steps, time, music, events and weather that turn over every few seconds and swing in like a turnstile.</p><span class="tap"><i class="fas fa-table-cells-large"></i> Press a tile and it leans in</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/43_canopy.webp" alt="Canopy theme" loading="lazy">
+                <div class="txt"><h4>Canopy <small class="new">New</small></h4><p>Night black with a vine of leaves down the edge that sways in a breeze, the month written by hand over a dot grid, a clean app list and a round clock.</p><span class="tap"><i class="fas fa-leaf"></i> Touch the vine to shake it</span></div>
+            </div>
+            <div class="card scene reveal">
+                <img src="img/themes/44_melt.webp" alt="Melt theme" loading="lazy">
+                <div class="txt"><h4>Melt <small class="new">New</small></h4><p>Liquid colour poured over a charcoal home that flows, drips and ripples, with a battery ring and a dotted clock in the paint and a quote of your own.</p><span class="tap"><i class="fas fa-droplet"></i> Touch the paint to ripple it</span></div>
             </div>
         </div>
     </div>
@@ -482,25 +579,25 @@
                     <li>All widgets, gestures, hidden apps, icon packs and backup</li>
                     <li>Grid, List, Pages and A–Z rows app drawers</li>
                     <li>Preview every premium theme</li>
-                    <li class="no">9 epic animated themes and Play space</li>
+                    <li class="no">15 premium themes, Play space and Mindful pause</li>
                 </ul>
             </div>
             <div class="card plan pro reveal">
                 <h3>Premium</h3>
-                <div class="price">Monthly or yearly through Google Play</div>
+                <div class="price">Monthly, yearly or once for life, through Google Play</div>
                 <ul class="ticks">
                     <li>Everything in Free</li>
                     <li>No ads</li>
-                    <li>All 9 epic animated themes</li>
-                    <li>Play space</li>
+                    <li>All 15 premium themes</li>
+                    <li>Play space and Mindful pause</li>
                     <li>Orbit, Helix, Carousel and Card stack app drawers</li>
                     <li>Bokeh, Embers, Geometry, Stardust, Fireworks, Fireflies, Sakura and Aurora particles, and every touch effect</li>
                     <li>Accent colour and day / night themes</li>
-                    <li>Free trial when Google Play offers one</li>
+                    <li>Free trial when Google Play offers one, and promo codes</li>
                 </ul>
             </div>
         </div>
-        <p class="fine reveal">Cancel any time in Google Play. See the <a href="terms.html">Terms of Use</a>.</p>
+        <p class="fine reveal">Subscriptions can be cancelled any time in Google Play; Lifetime is a single payment with no renewals. See the <a href="terms.html">Terms of Use</a>.</p>
     </div>
 </section>
 
@@ -520,6 +617,8 @@
             <details><summary>Does UniUI support icon packs?</summary><p>Yes, the common icon pack format used by most packs on Google Play. Pick one in More settings → Home screen → Icon pack.</p></details>
             <details><summary>How do I move my setup to a new phone?</summary><p>More settings → Backup → Back up saves a file. On the new phone, install UniUI and use Restore with that file. Android widgets need adding again.</p></details>
             <details><summary>Does Playground lock my child in?</summary><p>Playground shows only the apps you allow, with a daily time limit. Settings are behind a 4-digit parent PIN, with a lockout after too many wrong tries.</p></details>
+            <details><summary>Is there a one-time Premium?</summary><p>Yes. Lifetime is one payment through Google Play, with no renewals, next to the monthly and yearly plans. If you already subscribe, choose Switch to Lifetime on the Premium screen, then cancel your subscription in Google Play → Payments &amp; subscriptions so it doesn't renew.</p></details>
+            <details><summary>How do I use a promo code?</summary><p>Open More settings → Get Premium and tap “Have a promo code?”. Enter the code and the discounted prices show on the plans before you pay.</p></details>
             <details><summary>Which Android versions are supported?</summary><p>Android 8.1 and newer. Double-tap to lock needs Android 9 or newer.</p></details>
         </div>
     </div>
@@ -570,7 +669,7 @@
 (() => {
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Theme explorer data (the 9 premium themes are shown separately).
+    // Theme explorer data (the 15 premium themes are shown separately).
     const T = [
         ['01_uniui', 'UniUI', 'Calm', 'The default home: your photo in a frame, apps and widgets you drag anywhere, a dock, and all apps one swipe up.'],
         ['02_ink', 'Ink', 'Calm', 'Text only and monochrome, with today\'s screen time and a mindful pause before distracting apps.'],
@@ -623,12 +722,12 @@
     const setFilter = cat => {
         [...filters.children].forEach(f => f.classList.toggle('on', f.textContent === cat));
         let n = 0; cards.forEach(c => { const show = cat === 'All' || c.dataset.cat === cat; c.classList.toggle('hide', !show); n += show; });
-        note.textContent = cat === 'All' ? `Showing ${n} free themes, plus 9 premium themes below.` : `${n} ${cat.toLowerCase()} themes`;
+        note.textContent = cat === 'All' ? `Showing ${n} free themes, plus 15 premium themes below.` : `${n} ${cat.toLowerCase()} themes`;
     };
     cats.forEach(c => { const b = document.createElement('button'); b.className = 'chip'; b.textContent = c; b.addEventListener('click', () => setFilter(c)); filters.appendChild(b); });
     setFilter('All');
 
-    // Hero: cycle the "38 worlds" phone through a few themes
+    // Hero: cycle the "44 worlds" phone through a few themes
     const heroShots = ['33_fireworks', '36_aquarium', '08_gazette', '35_nature', '16_arcade', '34_ocean'];
     const heroImg = document.getElementById('heroShot'); let h = 0;
     if (!reduce) setInterval(() => { h = (h + 1) % heroShots.length; swapScreen(heroImg, `img/themes/${heroShots[h]}.webp`, ''); }, 3000);
